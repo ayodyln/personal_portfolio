@@ -1,0 +1,86 @@
+:root {
+    background-color: aqua;
+    --main-color: red;
+    /* -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; */
+    box-sizing: border-box;
+} 
+/* declares global CSS variables */
+
+/* CSS reset */
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* --- Body --- */
+
+  /* --- Wrapper --- */
+
+/* --- Header --- */ 
+
+@media only screen and (max-width: 828px) {
+  
+}
+
+/* --- Nav --- */
+ /* phone nav rules here */
+@media only screen and (max-width: 828px) {
+  
+}
+/* end of phone nav rules */
+
+  /*desktop nav rules here */
+@media only screen and (min-width: 829px) {
+  
+}
+
+/* --- Main --- */
+
+/* --- Images --- */
+
+
+
+/* --- Lists --- */
+
+/* --- borders ---*/
+
+/* --- Form --- */
+
+
+/*-- iFrames --*/
+
+
+/*-- Map --*/
+
+
+/*-- Tables --*/
+
+
+/*--Videos--*/
+
+
+/*-- Audio --*/
+
+
+/* --- Footer --- */
+
+
+/* --- Other --- */
+
+
+/* EXAMPLE STYLING FOR A HERO IMAGE BLOCK */
+
+
+/** -- Search Button --**/
+
+
