@@ -1,0 +1,132 @@
+/* codepen.io color */
+body {
+    background-color: #1D1E22;
+    font-family: "Helvetica", sans-serif;
+    background-image: linear-gradient(to right, #09203f 0%, #537895 100%);
+  }
+main {
+    width: 960px;
+    margin: 0 auto;
+  }
+  /* Header/logo */
+.logo {
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 100%;
+  }
+.logofig {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+.logofig > img {
+    margin-right: 15px;
+  }
+.logofig > figcaption {
+    background-color: #333;
+    color: white;
+    width: 150px;
+    font-size: 24px;
+  }
+  
+  /* main */
+  
+    /* bio section */
+#bio {
+    display: flex;
+    margin-bottom: 25px;
+  }
+#bio-choose {
+    width: 100%;
+    margin: 0px 10px 0px 15px;
+  }
+.profile-pic {
+    max-height: 200px;
+    margin-left: 9px;
+  }
+#name-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+  }
+h2, p {
+    margin: 0;
+  }
+h4 {
+    margin: 4px 0 14px 0;
+  }
+#choose-list {
+    background-color: #333;
+    padding: 12px;
+    margin-top: 22px;
+  }
+ul {
+    margin: 0;
+    padding-left: 2em;
+  }
+h4 {
+    padding-left: 1em;
+  }
+ul, li, h4 {
+    color: white;
+  }
+#name-date > p {
+    font-weight: bold;
+  }
+  
+    /* tech section */
+#tech {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+.img-figure {
+    text-align: center;
+    margin: 0.6em;
+  }
+.img-figure > img {
+    height: 150px;
+    max-width: 200px;
+  }
+.img-figure > figcaption {
+    color: white;
+    background-color: rgba(10, 10, 10, .7);
+    max-width: 150px;
+    position: relative;
+    top: -20px; left: 0;
+  }
+  
+    /* interest section */
+#interest {
+    width: auto;
+    height: 240px;
+    margin-right: 10px;
+  }
+#interest > h2 {
+    margin-left: 10px;
+  }
+#excited-about {
+    background-color: #333;
+    padding: 10px;
+    margin: 20px 0px 0px 10px;
+  }
+#excited-about > h3, p{
+    padding-left: 10px;
+  }
+#excited-about > h3 {
+    color: white;
+  }
+p, h2 {
+    color: white;
+  }
+  
+  /* footer */
+.centered {
+    text-align: center;
+  }
+.centered > p > i {
+    color: yellow;
+  }
