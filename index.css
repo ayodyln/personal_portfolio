@@ -1,6 +1,7 @@
 :root {
-    background-color: aqua;
-    --main-color: red;
+    background-color: #29323c;
+    /* background-color: #434343; */
+    --main-color: white;
     /* -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box; */
     box-sizing: border-box;
@@ -9,22 +10,14 @@
 
 /* CSS reset */
 
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
 }
-
 
 /* --- Body --- */
 
-  /* --- Wrapper --- */
+/* --- Wrapper --- */
 
 /* --- Header --- */ 
 
@@ -45,10 +38,16 @@ h6 {
 }
 
 /* --- Main --- */
+body {
+  color: white;
+}
+
+
+
+
+
 
 /* --- Images --- */
-
-
 
 /* --- Lists --- */
 
@@ -56,31 +55,20 @@ h6 {
 
 /* --- Form --- */
 
-
 /*-- iFrames --*/
-
 
 /*-- Map --*/
 
-
 /*-- Tables --*/
-
 
 /*--Videos--*/
 
-
-/*-- Audio --*/
-
-
 /* --- Footer --- */
-
 
 /* --- Other --- */
 
 
-/* EXAMPLE STYLING FOR A HERO IMAGE BLOCK */
 
 
-/** -- Search Button --**/
 
 
