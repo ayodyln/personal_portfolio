@@ -34,12 +34,33 @@
 
   /*desktop nav rules here */
 @media only screen and (min-width: 829px) {
-  
+  nav {
+    background-color: #00adb5;
+    height: 50px;
+  }
 }
 
 /* --- Main --- */
 body {
   color: white;
+}
+
+#welcome-section {
+  background-color: #222831;
+  height: 100vh;
+
+}
+
+#projects {
+  background-color: #393e46;
+  height: 100vh;
+}
+
+
+
+#linkup {
+  background-color: #222831;
+  height: 100vh;
 }
 
 
@@ -48,7 +69,10 @@ body {
 
 
 /* --- Images --- */
-
+.logo {
+  height: 100px;
+  display: flex;
+}
 /* --- Lists --- */
 
 /* --- borders ---*/
