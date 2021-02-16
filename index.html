@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+    />
     <link href="index.css" rel="stylesheet">
     <title>Portfolio</title>
 </head>
@@ -12,6 +19,17 @@
 
     <nav id="navbar">
         <!-- atleast one link -->
+        <ul class="navlist">
+            <a href="#welcome-section">
+                <li>About</li>
+            </a>
+            <a href="#projects">
+                <li>Work</li>
+            </a>
+            <a href="#linkup">
+                <li>Contact</li>
+            </a>
+        </ul>
     </nav>
 
 
@@ -19,29 +37,51 @@
         <h1>TEXT HERE</h1>
         <figure class="dylandesignlogo">
             <img class="logo" src="/imgs/Untitled-1.gif" alt="Dylan Designs Logo">
+            <figcaption>hello</figcaption>
         </figure>
     </section>
 
     <section id="projects">
-        <h1>projects</h1>
-        <div class="projectsection">
-            <h2>HERE</h2>
+        <div class="project-grid">
+            <a href="#" target="_blank" class="project-tile">
+                <figure>
+                    <img src="/imgs/itachi_test_400x400.jpg" alt="alt photo">
+                    <figcaption>text HERE</figcaption>
+                </figure>
+            </a>
+            <a href="#" target="_blank" class="project-tile">
+                <figure>
+                    <img src="/imgs/itachi_test_400x400.jpg" alt="alt photo">
+                    <figcaption>text HERE</figcaption>
+                </figure>
+            </a>
+            <a href="#" target="_blank" class="project-tile">
+                <figure>
+                    <img src="/imgs/itachi_test_400x400.jpg" alt="alt photo">
+                    <figcaption>text HERE</figcaption>
+                </figure>
+            </a>
         </div>
-        <img class="project-tile" src=""> 
         <!-- link a project here, you have two thus far -->
     </section>
 
     <section id="linkup">
-        <h2>hello</h2>
+        <div>
+            <h2>Lets work!</h2>
+            <p>witty comment lol</p>
+        </div>
+        <div class="contact-details">
+            <a id="profile-link" href="https://github.com/ayodyln" target="_blank">
+            <i class="fab fa-github"></i> Github
+            </a>
+
+        </div>
+
     </section>
 
         <!-- add link for github profile -->
 
-
-
-
-
-
     <footer>Texthere</footer>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>

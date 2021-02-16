@@ -14,8 +14,17 @@
   margin: 0;
   padding: 0;
 }
-
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 /* --- Body --- */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+a {
+  text-decoration: none;
+}
 
 /* --- Wrapper --- */
 
@@ -28,7 +37,29 @@
 /* --- Nav --- */
  /* phone nav rules here */
 @media only screen and (max-width: 828px) {
-  
+  nav {
+    background-color: #00adb5;
+    height: 50px;
+  }
+  #navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    width: 100%;
+  }
+  .navlist {
+    display: flex;
+    list-style-type: none;
+  }
+  .navlist a {
+    text-decoration: none;
+    display: block;
+    padding: .5em;
+    font-size: 1.5em;
+  }
+  .navlist a:hover {
+    background-color: red;
+  }
 }
 /* end of phone nav rules */
 
@@ -38,6 +69,27 @@
     background-color: #00adb5;
     height: 50px;
   }
+  #navbar {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    width: 100%;
+  }
+  .navlist {
+    display: flex;
+    list-style-type: none;
+  }
+  .navlist a {
+    text-decoration: none;
+    display: block;
+    padding: .5em;
+    font-size: 1.5em;
+    transition: transform 0.3s ease-out;
+  }
+  .navlist a:hover {
+    transform: translateY(-4px);
+    background-color: red;
+  }
 }
 
 /* --- Main --- */
@@ -45,34 +97,61 @@ body {
   color: white;
 }
 
+
 #welcome-section {
   background-color: #222831;
   height: 100vh;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 #projects {
   background-color: #393e46;
   height: 100vh;
 }
-
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.project-tile {
+  /* nothing */
+}
 
 
 #linkup {
   background-color: #222831;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-
-
-
+/* @media (max-width: 1200px) {
+  html {
+    font-size: 100%;
+  }
+}
+@media (max-width: 980px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 460px) {
+  html {
+    font-size: 50%;
+    background-color: red;
+  }
+} */
 
 /* --- Images --- */
 .logo {
   height: 100px;
   display: flex;
 }
+
 /* --- Lists --- */
 
 /* --- borders ---*/
