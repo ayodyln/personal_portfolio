@@ -39,27 +39,21 @@ a {
 @media only screen and (max-width: 828px) {
   nav {
     background-color: #00adb5;
-    height: 50px;
-  }
-  #navbar {
+    border-top: solid 1px #222831;
+    border-bottom: solid 1px #222831;
+    padding: .5rem 2%;
     display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    width: 100%;
+    justify-content: center;
   }
-  .navlist {
-    display: flex;
-    list-style-type: none;
+  
+
+  /* nav ul.menu li.active a {
+    background-color: #1a74e2;
   }
-  .navlist a {
-    text-decoration: none;
-    display: block;
-    padding: .5em;
-    font-size: 1.5em;
-  }
-  .navlist a:hover {
-    background-color: red;
-  }
+  nav ul.menu li a:hover {
+    background-color: #00c6fb;
+    color: #101010;
+  } */
 }
 /* end of phone nav rules */
 
