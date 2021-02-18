@@ -5,6 +5,10 @@
     /* -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box; */
     box-sizing: border-box;
+    --coal: #222831;
+    --light-black: #393e46;
+    --light-cyan: #00fff5;
+    --dark-cyan: #00adb5;
 } 
 /* declares global CSS variables */
 
@@ -38,9 +42,9 @@ a {
  /* phone nav rules here */
 @media only screen and (max-width: 828px) {
   nav {
-    background-color: #00adb5;
-    border-top: solid 1px #222831;
-    border-bottom: solid 1px #222831;
+    background-color: var(--dark-cyan);
+    border-top: solid 1px var(--coal);
+    border-bottom: solid 1px var(--coal);
     padding: .5rem 2%;
     display: flex;
     justify-content: center;
@@ -60,7 +64,7 @@ a {
   /*desktop nav rules here */
 @media only screen and (min-width: 829px) {
   nav {
-    background-color: #00adb5;
+    background-color: var(--dark-cyan);
     height: 50px;
   }
   #navbar {
@@ -90,10 +94,15 @@ a {
 body {
   color: white;
 }
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 #welcome-section {
-  background-color: #222831;
+  background-color: var(--coal);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -103,24 +112,42 @@ body {
 }
 
 #projects {
-  background-color: #393e46;
+}
+.project-grid {
+  background-color: var(--light-black);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   height: 100vh;
 }
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
+
+.project-tile:hover figcaption {
+  color: red;
 }
-.project-tile {
-  /* nothing */
+.project-img {
+  margin: 1rem;
+}
+.project-img > figcaption {
+  text-align: center;
+  background-color: white;
+  position: relative;
+  top: -6px;
+  padding: 12px 0px;
 }
 
 
 #linkup {
-  background-color: #222831;
-  height: 100vh;
+  background-color: var(--coal);
+  height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
+}
+.contact-details a {
+  color: white;
+  margin: 0 12px;
+  font-size: 1.5em;
 }
 
 /* @media (max-width: 1200px) {
@@ -146,19 +173,6 @@ body {
   display: flex;
 }
 
-/* --- Lists --- */
-
-/* --- borders ---*/
-
-/* --- Form --- */
-
-/*-- iFrames --*/
-
-/*-- Map --*/
-
-/*-- Tables --*/
-
-/*--Videos--*/
 
 /* --- Footer --- */
 
