@@ -10,7 +10,6 @@
     --light-cyan: #00fff5;
     --dark-cyan: #00adb5;
 } 
-/* declares global CSS variables */
 
 /* CSS reset */
 
@@ -28,14 +27,6 @@ body {
 }
 a {
   text-decoration: none;
-}
-
-/* --- Wrapper --- */
-
-/* --- Header --- */ 
-
-@media only screen and (max-width: 828px) {
-  
 }
 
 /* --- Nav --- */
@@ -100,7 +91,6 @@ h1 {
   align-items: center;
 }
 
-
 #welcome-section {
   background-color: var(--coal);
   height: 100vh;
@@ -112,7 +102,9 @@ h1 {
 }
 
 #projects {
+
 }
+
 .project-grid {
   background-color: var(--light-black);
   display: flex;
@@ -159,20 +151,22 @@ h1 {
   html {
     font-size: 75%;
   }
-}
-@media (max-width: 460px) {
-  html {
-    font-size: 50%;
-    background-color: red;
+  img {
+    width: 200px;
   }
 } */
 
+
 /* --- Images --- */
 .logo {
-  height: 100px;
+  height: 200px;
   display: flex;
 }
-
+.dylandesignlogo > figcaption {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 15px;
+}
 
 /* --- Footer --- */
 
