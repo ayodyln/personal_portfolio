@@ -28,6 +28,9 @@ body {
 a {
   text-decoration: none;
 }
+li {
+  color: var(--coal);
+}
 
 /* --- Nav --- */
  /* phone nav rules here */
@@ -55,7 +58,7 @@ a {
   /*desktop nav rules here */
 @media only screen and (min-width: 829px) {
   nav {
-    background-color: var(--dark-cyan);
+    background-color: var(--light-cyan);
     height: 50px;
   }
   #navbar {
@@ -77,7 +80,11 @@ a {
   }
   .navlist a:hover {
     transform: translateY(-4px);
-    background-color: red;
+    background-color: var(--coal);
+    color:white;
+  }
+  .navlist li:hover {
+    color: white;
   }
 }
 
@@ -114,19 +121,19 @@ h1 {
 }
 
 .project-tile:hover figcaption {
-  color: red;
+  color: var(--light-cyan);
 }
 .project-img {
   margin: 1rem;
 }
 .project-img > figcaption {
   text-align: center;
-  background-color: white;
+  color: var(--dark-cyan);
+  background-color: var(--coal);
   position: relative;
   top: -6px;
   padding: 12px 0px;
 }
-
 
 #linkup {
   background-color: var(--coal);
@@ -141,6 +148,9 @@ h1 {
   margin: 0 12px;
   font-size: 1.5em;
 }
+
+
+
 
 /* @media (max-width: 1200px) {
   html {
@@ -159,7 +169,7 @@ h1 {
 
 /* --- Images --- */
 .logo {
-  height: 200px;
+  height: 500px;
   display: flex;
 }
 .dylandesignlogo > figcaption {
@@ -169,6 +179,11 @@ h1 {
 }
 
 /* --- Footer --- */
+footer {
+  background-color: var(--dark-cyan);
+  text-align: center;
+  color: var(--coal);
+}
 
 /* --- Other --- */
 
