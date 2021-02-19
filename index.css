@@ -117,6 +117,7 @@ h1 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
   height: 100vh;
 }
 
@@ -177,6 +178,10 @@ h1 {
   font-size: 32px;
   margin-top: 15px;
 }
+.project-imgs {
+  width: 400px;
+}
+
 
 /* --- Footer --- */
 footer {
@@ -186,8 +191,6 @@ footer {
 }
 
 /* --- Other --- */
-
-
 
 
 
