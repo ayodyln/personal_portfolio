@@ -48,6 +48,7 @@ li {
     display: flex;
     justify-content: flex-end;
     position: fixed;
+    top: 0;
     width: 100%;
   }
   .navlist {
@@ -213,16 +214,48 @@ footer {
     text-decoration: none;
     padding: 1em;
     font-size: 2em;
-
   }
-  
 }
+@media (max-width: 375px) {
+  html {
+    font-size: 60%;
+  }
+  #welcome-section, #projects, #linkup {
+    width: 50vh
+  }
+  nav {
+    
+  }
+  #navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navlist {
+    display: flex;
+    list-style-type: none;
+    margin-right: 50px;
+  }
+  .navlist a {
+    text-decoration: none;
+    font-size: 2.5em;
+  }
+  .project-img > img {
+    max-width: 210px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+}
+
 
 /* --- Other --- */
 .h1-blank {
   color: white;
   margin-top: -2em;
 }
-
+div.keepOpen {
+  clear: both;
+}
 
 
