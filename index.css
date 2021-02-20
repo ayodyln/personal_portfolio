@@ -59,10 +59,8 @@ li {
     display: block;
     padding: .5em;
     font-size: 1.5em;
-    transition: transform 0.3s ease-out;
   }
   .navlist a:hover {
-    transform: translateY(-4px);
     background-color: var(--coal);
     color:white;
   }
@@ -179,7 +177,7 @@ footer {
   border-top: 4px solid var(--dark-cyan);
 }
 
-/* media */
+/* --- media --- */
 
 /* @media (max-width: 1200px) {
   html {
