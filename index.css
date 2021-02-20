@@ -179,12 +179,28 @@ footer {
 }
 
 /* --- media --- */
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) { 
+      #welcome-section, #projects, #linkup, footer {
+        width: 53vh
+      }
+      #navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+      }
+      .navlist {
+        display: flex;
+        list-style-type: none;
+        margin-right: 35px;
+      }
+      
+    }
 
-/* @media (max-width: 1200px) {
-  html {
-    font-size: 100%;
-  }
-} */
 @media (max-width: 1200px) {
   html {
     font-size: 75%;
