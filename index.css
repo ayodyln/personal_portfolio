@@ -198,7 +198,10 @@ footer {
         list-style-type: none;
         margin-right: 35px;
       }
-      
+      body {
+        font-size: 95%;
+      }
+
     }
 
 @media (max-width: 1200px) {
