@@ -44,41 +44,34 @@ body::before {
 
 
 /* --- Nav --- */
- /* phone nav rules here */
-
-/* end of phone nav rules */
-
-  /*desktop nav rules here */
-@media only screen and (min-width: 829px) {
-  nav {
-    background-color: var(--light-cyan);
-    height: 50px;
-  }
-  #navbar {
-    display: flex;
-    justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-  }
-  .navlist {
-    display: flex;
-    list-style-type: none;
-  }
-  .navlist a {
-    text-decoration: none;
-    display: block;
-    padding: .5em;
-    font-size: 1.5em;
-  }
-  .navlist a:hover {
-    background-color: var(--coal);
-    color:white;
-  }
-  .navlist li:hover {
-    color: white;
-  }
+nav {
+  background-color: var(--light-cyan);
+  height: 50px;
+}
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.navlist {
+  display: flex;
+  list-style-type: none;
+}
+.navlist a {
+  text-decoration: none;
+  display: block;
+  padding: .5em;
+  font-size: 1.5em;
+}
+.navlist a:hover {
+  background-color: var(--coal);
+  color:white;
+}
+.navlist li:hover {
+  color: white;
 }
 
 /* --- Main --- */
