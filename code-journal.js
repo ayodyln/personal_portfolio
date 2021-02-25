@@ -41,3 +41,21 @@ let myArray2 = [
     [2, 'help'],
     myBool, true
 ]
+
+myArray2.length
+//.shift() and .pop()
+
+
+// Object
+let minObject = {};
+
+
+// Functions
+
+funciton myFunction() {
+    return 'my f in chat for ya';
+};
+
+function sumTwoThings(one, two) {
+    return one + two;
+};
