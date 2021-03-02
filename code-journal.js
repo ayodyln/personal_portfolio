@@ -59,3 +59,5 @@ funciton myFunction() {
 function sumTwoThings(one, two) {
     return one + two;
 };
+
+const theFunction = () => 'I am awesome';
