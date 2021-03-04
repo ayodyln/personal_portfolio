@@ -12,7 +12,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
 figure {
@@ -25,3 +24,6 @@ figcaption {
     margin-top: 5px;
     font-size: 16px;
 }
+
+
+/* media */
