@@ -10,14 +10,32 @@ maleButton.addEventListener('click', () => {
     populateDOM(maleCharacters)
     
 })
+const femaleButton = document.createElement('button')
+femaleButton.textContent = 'Female Characters'
+femaleButton.addEventListener('click', () => {
+    populateDOM(femaleCharacters)
+    
+})
+
+const otherButton = document.createElement('button')
+otherButton.textContent = 'Other Characters'
+otherButton.addEventListener('click', () => {
+    populateDOM(otherCharacters)
+})
 
 mainHeader.appendChild(maleButton)
+document.body.insertBefore(mainHeader, mainContent)
+
+mainHeader.appendChild(femaleButton)
+document.body.insertBefore(mainHeader, mainContent)
+
+mainHeader.appendChild(otherButton)
 document.body.insertBefore(mainHeader, mainContent)
 
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
 const otherCharacters = people.filter(person => {
-    if (person.gender === 'n/a' || person.gender === 'none') {
+    if (person.gender === "n/a" || person.gender === "none") {
         return person
     }
 })
