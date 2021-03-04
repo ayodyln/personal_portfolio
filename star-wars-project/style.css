@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
@@ -13,11 +14,14 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 figure {
     margin: 1em;
 }
+
 figcaption {
     text-align: center;
     color: white;
     margin-top: 5px;
+    font-size: 16px;
 }
