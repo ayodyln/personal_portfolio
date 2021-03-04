@@ -10,6 +10,8 @@ body {
 .movieList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 figure {
     margin: 1em;
@@ -17,4 +19,5 @@ figure {
 figcaption {
     text-align: center;
     color: white;
+    margin-top: 5px;
 }
