@@ -14,10 +14,37 @@ function populateNav() {
 }
 
 function populateShipView(shipData) {
-    let shipImage = document.createElement('img')
-    shipImage.src = `https://starwars-visualguide.com/assets/img/starships/10.jpg`
-    
-    shipView.appendChild(shipImage)
+    // removeChildren(mainContent)
+    starships.forEach(starship => {
+        let shipFigure = document.createElement('figure')
+        let shipImage = document.createElement('img')
+        let shipNum = getLastNumber(starship.url)
+        shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+
+        const shipCaption = document.createElement('figcaption')
+
+        shipCaption.textContent = starship.name
+
+        shipView.appendChild(shipImage)
+        shipView.appendChild(shipCaption)
+        // mainContent.appendChild(shipFigure)
+    })
+}
+
+
+// function removeChildren(container) {
+//     while (container.firstChild) {
+//     container.removeChild(container.firstChild);
+//     }
+// }
+
+function getLastNumber(url) {
+    let end = url.lastIndexOf('/')
+    let start = end - 2
+    if (url.charAt(start) === '/') {
+        start++
+    }
+    return url.slice(start, end)
 }
 
 populateNav()
