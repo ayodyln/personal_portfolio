@@ -36,9 +36,9 @@ document.body.insertBefore(mainHeader, mainContent)
 const maleCharacters = people.filter(person => person.gender === 'male')
 const femaleCharacters = people.filter(person => person.gender === 'female')
 const otherCharacters = people.filter(person => {
-    if (person.gender === "n/a" || person.gender === "none") {
+    if (person.gender === "n/a" || person.gender === "none" || person.gender === "hermaphrodite") {
         return person
-    }
+    } 
 })
 
 function populateDOM(characters) {
@@ -71,4 +71,4 @@ function removeChildren(container) {
     while (container.firstChild) {
     container.removeChild(container.firstChild);
     }
-   }
+}
