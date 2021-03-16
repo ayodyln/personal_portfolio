@@ -3,6 +3,13 @@
     box-sizing: border-box;
 }
 
+html {
+    background: url(/imgs/starwars_space.png);
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+}
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -10,4 +17,13 @@ main {
 
 li {
     list-style-type: none;
+    margin: 5px;
+}
+
+img {
+    border-style: double;
+}
+
+footer {
+    text-align: center;
 }
