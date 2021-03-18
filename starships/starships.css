@@ -4,8 +4,8 @@
 }
 
 html {
-    background: url(/imgs/starwars_space.png);
-    background-size: cover;
+   
+    background-color: black;
     color: white;
     font-family: sans-serif;
 }
@@ -20,8 +20,19 @@ li {
     margin: 5px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 img {
     border-style: double;
+}
+figure {
+    margin: 50px;
+}
+figcaption {
+    text-align: center;
 }
 
 footer {

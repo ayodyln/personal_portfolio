@@ -1,4 +1,5 @@
 import { films } from '../DATA/films.js'
+import { getLastNumber } from '../utility_functions/index.js'
 
 // let itemOne = document.querySelector('#item1')
 // let itemTwo = document.querySelector('#item2')
@@ -14,6 +15,7 @@ let movieList = document.querySelector('.movieList')
 
 for (let i = 0; i < films.length; i++) {
     const foundFilm = films.find(film => getLastNumber(film.url) === (i + 1))
+    
     let figure = document.createElement('figure')
     let newImage = document.createElement('img')
     let figCaption = document.createElement('figcaption')
@@ -31,7 +33,7 @@ for (let i = 0; i < films.length; i++) {
     // console.log(foundFilm)
 }
 
-function getLastNumber(url) {
-    let end = url[url.length - 2]
-    return parseInt(end, 10)
-}
+// function getLastNumber(url) {
+//     let end = url[url.length - 2]
+//     return parseInt(end, 10)
+// }
