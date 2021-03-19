@@ -1,9 +1,6 @@
 :root {
     background-color: #29323c;
-    /* background-color: #434343; */
     --main-color: white;
-    /* -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; */
     box-sizing: border-box;
     --coal: #222831;
     --light-black: #393e46;
@@ -22,6 +19,17 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, var(--dark-cyan));
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, var(--light-cyan));
+}
+
 /* --- Body --- */
 body {
   font-family: 'Poppins', sans-serif;
@@ -38,16 +46,6 @@ a {
 li {
   color: var(--coal);
 }
-/* body::before {
-  content: "";
-  position: fixed;
-  top: -10px;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  box-shadow: 0px 0 10px rgba(218, 8, 8, 0.8);
-  z-index: 100;
-} */
 
 /* --- Nav --- */
 nav {
