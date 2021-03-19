@@ -33,20 +33,14 @@ function populateShipView(shipData) {
         shipImage.hidden = true
     })
 
-        
-
     shipCaption.textContent = shipData.name
 
     shipFigure.appendChild(shipImage)
     shipFigure.appendChild(shipCaption)
     shipView.appendChild(shipFigure)
-    
 }
 
-
-
 populateNav()
-
 
 function addStarField(element, numStars) {
     element.style.setProperty('background-color', 'black')
