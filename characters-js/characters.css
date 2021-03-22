@@ -54,9 +54,9 @@ nav {
 .burger div{
     width: 25px;
     height: 3px;
-    background-color: blue;
+    background-color: black;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 0px;
     transition: all 0.3s ease;
 }
 .burger {
@@ -67,7 +67,7 @@ nav {
 
 @media screen and (max-width: 1024px) {
     .nav-links {
-        width: 40%;
+        width: 50%;
     }
 }
     
