@@ -1,16 +1,6 @@
 import { films } from '../DATA/films.js'
 import { getLastNumber } from '../utility_functions/index.js'
 
-// let itemOne = document.querySelector('#item1')
-// let itemTwo = document.querySelector('#item2')
-// let itemThree = document.querySelector('#item3')
-
-// itemOne.textContent = films[2].title
-// itemTwo.textContent = films[1].title
-// itemThree.textContent = films[3].title
-
-// console.log(films[0].title)
-
 let movieList = document.querySelector('.movieList')
 
 for (let i = 0; i < films.length; i++) {
@@ -37,3 +27,33 @@ for (let i = 0; i < films.length; i++) {
 //     let end = url[url.length - 2]
 //     return parseInt(end, 10)
 // }
+
+// nav poggers
+
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    
+
+    burger.addEventListener('click', () => {
+        //toggle nav
+        nav.classList.toggle('nav-active');
+
+        //Animate links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = ''
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
+            }
+        });
+        //burger animation
+        burger.classList.toggle('toggle');
+
+    });
+
+    
+}
+
+navSlide()
