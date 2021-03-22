@@ -65,12 +65,17 @@ nav {
 
     /* mobile nav */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1308px) {
     .nav-links {
         width: 50%;
     }
 }
-    
+  
+@media screen and (max-width: 1189px) {
+    .nav-links {
+        width: 50%;
+    }
+}
 
 @media screen and (max-width: 768px) {
     body {
