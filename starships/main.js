@@ -94,7 +94,6 @@ const navSlide = () => {
 
     });
 
-    
 }
 
 navSlide()
