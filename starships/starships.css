@@ -2,9 +2,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
-   
+    overflow-x: hidden;
     background-color: black;
     color: white;
     font-family: sans-serif;
@@ -15,9 +20,16 @@ main {
     flex-wrap: wrap;
 }
 
+
+/* navlist section  */
+.starshipnav {
+    background-color: goldenrod;
+    z-index: 98;
+}
 li {
     list-style-type: none;
     margin: 5px;
+    color: black;
 }
 
 a {
@@ -25,28 +37,16 @@ a {
     color: white;
 }
 
-img {
-    border-style: double;
-}
-figure {
-    margin: 50px;
-}
-figcaption {
-    text-align: center;
-}
 
-footer {
-    text-align: center;
-}
-
-/* nav */
-nav {
+/* nav-crosspage */
+.navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
     font-family: sans-serif;
     background-color: goldenrod;
+    z-index: 99;
 }
 .logo {
     color: black;
@@ -146,3 +146,36 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
+
+
+/* img */
+img {
+    border-style: solid;
+    border-color: goldenrod;
+}
+figure {
+    margin: 50px;
+}
+figure {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+}
+figcaption {
+    text-align: center;
+}
+
+
+
+/* footer */
+
+footer {
+    text-align: center;
+}
+
+
+ /* Start https://www.cursors-4u.com */ 
+ * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;} 
+ /* End https://www.cursors-4u.com */
