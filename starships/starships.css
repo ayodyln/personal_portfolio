@@ -18,13 +18,20 @@ html {
 main {
     display: flex;
     flex-wrap: wrap;
+    height: 100vh;
+}
+
+img, nav {
+    z-index: 1;
+    position: relative;
 }
 
 
 /* navlist section  */
 .starshipnav {
     background-color: goldenrod;
-    z-index: 98;
+    z-index: 1;
+    height: 75vh;
 }
 li {
     list-style-type: none;
@@ -176,6 +183,13 @@ footer {
 }
 
 
+.modal {
+    z-index: 99;
+}
+.message-text {
+    text-align: center;
+}
+
  /* Start https://www.cursors-4u.com */ 
- * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;} 
+ /* * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;}  */
  /* End https://www.cursors-4u.com */

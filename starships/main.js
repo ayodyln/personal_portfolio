@@ -4,6 +4,19 @@ import { getLastNumber, removeChildren } from '../utility_functions/index.js'
 const main = document.querySelector('main')
 const navList = document.querySelector('.navlist')
 const shipView = document.querySelector('.shipview')
+const dialogBox = document.querySelector('.modal')
+
+const closeButton = document.querySelector('.modal-close')
+
+closeButton.addEventListener('click', () => {
+    dialogBox.classList.toggle('is-active')
+})
+
+const modalBackground = document.querySelector('.modal-background')
+
+modalBackground.addEventListener('click', () => {
+    dialogBox.classList.toggle('is-active')
+})
 
 function populateNav() {
     starships.forEach((starship) => {
@@ -31,6 +44,7 @@ function populateShipView(shipData) {
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener('error', () => {
         shipImage.hidden = true
+        dialogBox.classList.toggle('is-active') //a little too easy 
     })
 
     shipCaption.textContent = shipData.name
@@ -97,3 +111,6 @@ const navSlide = () => {
 }
 
 navSlide()
+
+//Pop-up msg
+
