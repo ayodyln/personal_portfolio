@@ -26,13 +26,29 @@ img, nav {
     position: relative;
 }
 
+header {
+    text-align: center;
+    color: goldenrod;
+    font-family: sans-serif;
+    font-style: bold;
+    font-size: 36px;
+    z-index: 99;
+    position: relative;
+}
+
 
 /* navlist section  */
 .starshipnav {
     background-color: goldenrod;
     z-index: 1;
-    height: 75vh;
+    height: 100vh;
 }
+@media screen and (max-width: 1920px) {
+    .starshipnav {
+        height: 122vh;
+    }
+}
+
 li {
     list-style-type: none;
     margin: 5px;
@@ -161,7 +177,7 @@ img {
     border-color: goldenrod;
 }
 figure {
-    margin: 50px;
+    margin: 0px;
 }
 figure {
     position: absolute;
@@ -170,16 +186,27 @@ figure {
     transform: translate(-50%, -50%);
     z-index: 99;
 }
+
+
+
 figcaption {
     text-align: center;
+    color: goldenrod;
 }
 
 
 
 /* footer */
-
+main {
+    margin-bottom: 25vh;
+}
 footer {
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: goldenrod;
+    color: black;
 }
 
 
