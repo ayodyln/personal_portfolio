@@ -96,6 +96,10 @@ nav {
 }
 .project-img {
   margin: 1.5rem;
+
+}
+.project-img > img {
+  width: 300px;
 }
 .project-img > figcaption {
   text-align: center;
@@ -105,6 +109,7 @@ nav {
   top: -5px;
   padding: 10px 0px;
 }
+
 
   /* contact section */
 #linkup {

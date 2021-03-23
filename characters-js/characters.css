@@ -203,16 +203,7 @@ button:hover::before {
 
 /* scrollbar */
 
-::-webkit-scrollbar {
-    width: 0;
-}
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(transparent, var(--dark-cyan));
-    border-radius: 5px;
-  }
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(transparent, var(--light-cyan));
-}
-
   
-  /* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;} /* End https://www.cursors-4u.com */
+  /* Start https://www.cursors-4u.com */ 
+  * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;} 
+  /* End https://www.cursors-4u.com */
