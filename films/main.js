@@ -21,7 +21,7 @@ for (let i = 0; i < films.length; i++) {
     movieList.appendChild(figure)
 
 
-    // console.log(foundFilm)
+    console.log(foundFilm)
 }
 
 
