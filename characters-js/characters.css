@@ -14,11 +14,15 @@ header {
     flex-wrap: wrap;
     justify-content: center;
 }
+.starwarsheader {
+    margin-top: 15px;
+}
 #main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+
 
 /* nav */
 nav {

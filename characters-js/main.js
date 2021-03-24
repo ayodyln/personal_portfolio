@@ -1,5 +1,6 @@
 import { people } from '../data/people.js'
 import { removeChildren, getLastNumber } from '../utility_functions/index.js'
+import { addStarField, getRandomPosition } from '../utility_functions/index.js'
 
 const mainContent = document.querySelector('#main')
 
@@ -60,16 +61,6 @@ function populateDOM(characters) {
 }
 
 
-let progress = document.getElementById('progressbar');
-
-let totalHeight = document.body.scrollHeight - window.innerHeight;
-
-// window.onscroll = function() {
-//     let progressHeight = (window.pageYOffset / totalHeight) * 100;
-//     progress.style.height = progressHeight + "%";
-// }
-
-
 // nav poggers
 
 const navSlide = () => {
@@ -77,7 +68,6 @@ const navSlide = () => {
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
     
-
     burger.addEventListener('click', () => {
         //toggle nav
         nav.classList.toggle('nav-active');
@@ -99,4 +89,5 @@ const navSlide = () => {
 }
 
 navSlide()
+
 

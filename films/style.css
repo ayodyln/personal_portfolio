@@ -12,7 +12,7 @@ header {
     text-align: center;
     color: goldenrod;
     font-family: sans-serif;
-    margin: 5px;
+    margin-top: 25px;
 }
 
 .movieList {
@@ -21,8 +21,18 @@ header {
     justify-content: center;
 }
 
+img, nav, header, footer {
+    position: relative;
+    z-index: 1;
+}
+
 figure {
-    margin: 1em;
+    margin: 2em;
+}
+@media screen and (min-width: 1440px) {
+    figure {
+        margin: 4em;
+    }
 }
 
 figcaption {
@@ -156,4 +166,18 @@ footer {
     width: 100%;
     background-color: goldenrod;
     color: black;
+}
+
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+   
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+body::-webkit-scrollbar-thumb {
+    background-color: goldenrod;
+    outline: 1px solid goldenrod;
 }

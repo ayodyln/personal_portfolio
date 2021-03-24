@@ -1,5 +1,6 @@
 import { films } from '../DATA/films.js'
 import { getLastNumber } from '../utility_functions/index.js'
+import { addStarField, getRandomPosition } from '../utility_functions/index.js'
 
 let movieList = document.querySelector('.movieList')
 
@@ -23,10 +24,6 @@ for (let i = 0; i < films.length; i++) {
     // console.log(foundFilm)
 }
 
-// function getLastNumber(url) {
-//     let end = url[url.length - 2]
-//     return parseInt(end, 10)
-// }
 
 // nav poggers
 
@@ -57,3 +54,5 @@ const navSlide = () => {
 }
 
 navSlide()
+
+addStarField(document.querySelector('body'), 250)
