@@ -220,3 +220,16 @@ footer {
  /* Start https://www.cursors-4u.com */ 
  * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;} 
  /* End https://www.cursors-4u.com */
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+   
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+body::-webkit-scrollbar-thumb {
+    background-color: goldenrod;
+    outline: 1px solid goldenrod;
+}
