@@ -40,12 +40,57 @@ header {
 /* navlist section  */
 .starshipnav {
     background-color: goldenrod;
-    z-index: 1;
-    height: 100vh;
+    z-index: 2;
+    font-family: sans-serif;
 }
-@media screen and (max-width: 1920px) {
+
+@media screen and (min-width: 1920px) {
     .starshipnav {
         height: 122vh;
+        width: 200px; 
+    }
+}
+@media screen and (max-width: 1024px) {
+    .navlist {
+        text-align: center;
+    }
+    img {
+        margin-left: 125px;
+        width: 600px;
+    }
+    figure {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        justify-content: center;
+    }
+    figcaption {
+        width: 400px;
+        text-align: center;
+        font-size: 32px;
+        margin-left: 225px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navlist {
+        text-align: center;
+    }
+    img {
+        margin-left: 125px;
+        width: 500px;
+    }
+    figure {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        justify-content: center;
+    }
+    figcaption {
+        width: 400px;
+        text-align: center;
+        font-size: 32px;
+        margin-left: 125px;
     }
 }
 
@@ -144,6 +189,7 @@ a {
         display: block;
         cursor: pointer;
     }
+    
 }
 .nav-active {
     transform: translateX(0%);
@@ -207,6 +253,8 @@ footer {
     width: 100%;
     background-color: goldenrod;
     color: black;
+    z-index: 1;
+    margin-top: 250px;
 }
 
 
@@ -221,7 +269,7 @@ footer {
  * {cursor: url(https://cur.cursors-4u.net/others/oth-1/oth24.cur), auto !important;} 
  /* End https://www.cursors-4u.com */
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     width: 0.5em;
 }
    
@@ -232,4 +280,4 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background-color: goldenrod;
     outline: 1px solid goldenrod;
-}
+} */

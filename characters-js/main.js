@@ -58,7 +58,9 @@ function populateDOM(characters) {
         charFigure.appendChild(charCaption)
         mainContent.appendChild(charFigure)
     })
+    
 }
+populateDOM(maleCharacters) // allows characters page to be a bit more full, from getgo
 
 
 // nav poggers

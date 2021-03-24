@@ -1,4 +1,4 @@
-import { films } from '../DATA/films.js'
+import { films } from '../data/films.js'
 import { getLastNumber } from '../utility_functions/index.js'
 import { addStarField, getRandomPosition } from '../utility_functions/index.js'
 

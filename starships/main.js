@@ -79,6 +79,7 @@ const navSlide = () => {
                 link.style.animation = ''
             } else {
                 link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
+                removeChildren(shipView)
             }
         });
         //burger animation
@@ -91,4 +92,30 @@ const navSlide = () => {
 navSlide()
 
 //Pop-up msg
+
+// const mediaQuery = window.matchMedia('(min-width: 768px)')
+// if (mediaQuery.matches) {
+//     function populateShipView(shipData) {
+//         removeChildren(shipView)
+//         console.log(shipData)
+//         let shipFigure = document.createElement('figure')
+//         let shipCaption = document.createElement('figcaption')
+//         let shipImage = document.createElement('img')
+//         let shipNum = getLastNumber(shipData.url)
+//         shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+//         shipImage.addEventListener('error', () => {
+//             shipImage.hidden = true
+//             dialogBox.classList.toggle('is-active') //a little too easy 
+//         })
+    
+//         shipCaption.textContent = shipData.name
+    
+//         shipFigure.appendChild(shipImage)
+//         shipFigure.appendChild(shipCaption)
+//         shipView.appendChild(shipFigure)
+//     }
+//     populateNav()
+    
+// }
+
 
