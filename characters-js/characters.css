@@ -238,3 +238,31 @@ main {
     margin-left: 50px;
     margin-right: 50px;
 }
+footer {
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: goldenrod;
+    color: black;
+}
+footer > p {
+    font-family: sans-serif;
+}
+
+
+/* @media for Iphone 12 */
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        .sw-figure {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        main {
+            margin: 0;
+        }
+       
+    }

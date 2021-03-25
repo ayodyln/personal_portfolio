@@ -48,15 +48,20 @@ function populateDOM(characters) {
     characters.forEach(person => {
         const charFigure = document.createElement('figure')
         const charImg = document.createElement('img')
+        const charCaption = document.createElement('figcaption')
         let charNum = getLastNumber(person.url)
         charImg.src = `https://starwars-visualguide.com/assets/img/characters/${charNum}.jpg`
-        const charCaption = document.createElement('figcaption')
-    
+        
         charCaption.textContent = person.name
+
+        charFigure.classList.add('sw-figure')
+        charImg.classList.add('sw-img')
+        charCaption.classList.add('sw-figcap')
     
         charFigure.appendChild(charImg)
         charFigure.appendChild(charCaption)
         mainContent.appendChild(charFigure)
+        // console.log(charFigure)
     })
     
 }

@@ -37,9 +37,17 @@ figure {
 
 figcaption {
     text-align: center;
-    color: white;
+    color: goldenrod;
     margin-top: 5px;
     font-size: 16px;
+}
+.sw-img {
+    width: 400px;
+    border: goldenrod solid;
+}
+.sw-figcap {
+    font-size: 26px;
+    font-family: sans-serif;
 }
 
 
@@ -183,3 +191,30 @@ body::-webkit-scrollbar-thumb {
     background-color: goldenrod;
     outline: 1px solid goldenrod;
 }
+
+
+/* @media for Iphone 12 */
+
+@media only screen 
+    and (device-width: 390px) 
+    and (device-height: 844px) 
+    and (-webkit-device-pixel-ratio: 3) {
+    a {
+        text-align: center;
+        margin-right: 40px;
+    }
+    .sw-img {
+        width: 350px;
+        border: goldenrod solid;
+    }
+    .sw-figcap {
+        font-size: 26px;
+        font-family: sans-serif;
+    }
+    h1, figcaption {
+        text-align: center;
+        color: goldenrod;
+    }
+        
+}
+

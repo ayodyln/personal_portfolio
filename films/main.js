@@ -20,10 +20,16 @@ for (let i = 0; i < films.length; i++) {
     figure.appendChild(figCaption)
     movieList.appendChild(figure)
 
+    figure.classList.add('sw-figure')
+    newImage.classList.add('sw-img')
+    figCaption.classList.add('sw-figcap')
+
 
     console.log(foundFilm)
 }
-
+// figure.classList.add('sw-figure')
+// newImage.classList.add('sw-img')
+// figCaption.classList.add('sw-figcap')
 
 // nav poggers
 

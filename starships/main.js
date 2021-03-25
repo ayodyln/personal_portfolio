@@ -27,11 +27,17 @@ function populateNav() {
             // console.log(starship.name)
             populateShipView(starship)
         })
+        
         let listItem = document.createElement('li')
         listItem.textContent = starship.name
 
+       
         aElement.appendChild(listItem)
         navList.appendChild(aElement)
+
+        aElement.classList.add('a-element-nav')
+        listItem.classList.add('listItem')
+        
     })
 }
 
@@ -45,7 +51,8 @@ function populateShipView(shipData) {
     shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
     shipImage.addEventListener('error', () => {
         shipImage.hidden = true
-        dialogBox.classList.toggle('is-active') //a little too easy 
+        dialogBox.classList.toggle('is-active')
+        removeChildren(shipView) //a little too easy 
     })
 
     shipCaption.textContent = shipData.name
@@ -53,6 +60,9 @@ function populateShipView(shipData) {
     shipFigure.appendChild(shipImage)
     shipFigure.appendChild(shipCaption)
     shipView.appendChild(shipFigure)
+    shipFigure.classList.add('ship-figure')
+    shipCaption.classList.add('ship-figcap')
+    shipImage.classList.add('ship-img')
 }
 
 populateNav()
@@ -90,32 +100,4 @@ const navSlide = () => {
 }
 
 navSlide()
-
-//Pop-up msg
-
-// const mediaQuery = window.matchMedia('(min-width: 768px)')
-// if (mediaQuery.matches) {
-//     function populateShipView(shipData) {
-//         removeChildren(shipView)
-//         console.log(shipData)
-//         let shipFigure = document.createElement('figure')
-//         let shipCaption = document.createElement('figcaption')
-//         let shipImage = document.createElement('img')
-//         let shipNum = getLastNumber(shipData.url)
-//         shipImage.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
-//         shipImage.addEventListener('error', () => {
-//             shipImage.hidden = true
-//             dialogBox.classList.toggle('is-active') //a little too easy 
-//         })
-    
-//         shipCaption.textContent = shipData.name
-    
-//         shipFigure.appendChild(shipImage)
-//         shipFigure.appendChild(shipCaption)
-//         shipView.appendChild(shipFigure)
-//     }
-//     populateNav()
-    
-// }
-
 
