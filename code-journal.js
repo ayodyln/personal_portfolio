@@ -122,3 +122,10 @@ const pilots = [
     };
     return filmObj;
   });
+
+
+const totalYears = pilots.reduce((acc, pilot) => acc + pilot.years, 0) // add all pilots years to accumalator
+
+const mostExpPilot = pilots.reduce((oldest, pilot) => {
+  return (oldest.years || 0) > pilot.years ? oldest : pilot 
+}, {}) // ternary operator ^ Syntax: condistion ? exprIfTrue: exprIfFalse
