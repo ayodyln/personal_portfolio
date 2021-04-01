@@ -1,124 +1,31 @@
-<!DOCTYPE html>
+<!DOCpoke-id html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Pokemon Card</title>
     <!-- ctrl+shift+L = multi text edit -->
   </head>
   <body>
-    
-  <div class="pokegrid">
-    <div class="pokecard">
-      <div class="type">
-        <i class="fas fa-bolt"></i>
+    <header>
+      <div class="logoHeader">
+        <img src="img/pokemonLOGO.jpg" alt="pokeball logo" class="logo" />
+        <h1>Pokemon Cards: Gen 1</h1>
       </div>
-
-      <div class="front">
-        <img class="thumbnail" src="img/pikachu.png" alt="Pikachu" />
-        <h3 class="name">Pikachu - lvl<span class="blue-level"> 1</span></h3>
-        <div class="stats">
-          <p class="HP green">70 <span class="white">HP</span></p>
-          <div class="poke-profile-pic">
-            <img src="img/pichu2.png" alt="evo 1" />
-            <img src="img/pikachu-evo.png" alt="evo 2" />
-            <img src="img/raichu-evo.jpg" alt="evo 3" />
-          </div>
-        </div>
-      </div>
-
-      <div class="back">
-        <div class="stream-info">
-          <p class="game-stat green">70<span class="white">HP</span></p>
-          <p class="game-stat"><i class="fas fa-bolt"></i><span>Type</span></p>
-        </div>
-        <button class="btn">Abilities</button>
-        <div class="poke-profile-pic">
-          <div class="steamer">
-            <div class="icon">
-              <img src="img/pichu2.png" alt="" />
-            </div>
-            <p class="name">Pichu</p>
-            <p class="p number">Evo: 1</p>
-          </div>
-          <div class="steamer">
-            <div class="icon">
-              <img src="img/pikachu-evo.png" alt="" />
-            </div>
-            <p class="name">Pikachu</p>
-            <p class="p number">Evo: 2</p>
-          </div>
-          <div class="steamer">
-            <div class="icon">
-              <img src="img/raichu-evo.jpg" alt="" />
-            </div>
-            <p class="name">Raichu</p>
-            <p class="p number">Evo: 3</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="background"></div>
-    </div>
-
-    <div class="pokecard">
-      <div class="type">
-        <i class="fas fa-bolt"></i>
-      </div>
-
-      <div class="front">
-        <img class="thumbnail" src="img/umbreon.jpg" alt="Pikachu" />
-        <h3 class="name">Pikachu - lvl<span class="blue-level"> 1</span></h3>
-        <div class="stats">
-          <p class="HP green">70 <span class="white">HP</span></p>
-          <div class="poke-profile-pic">
-            <img src="img/pichu2.png" alt="evo 1" />
-            <img src="img/pikachu-evo.png" alt="evo 2" />
-            <img src="img/raichu-evo.jpg" alt="evo 3" />
-          </div>
-        </div>
-      </div>
-
-      <div class="back">
-        <div class="stream-info">
-          <p class="game-stat green">70<span class="white">HP</span></p>
-          <p class="game-stat"><i class="fas fa-bolt"></i><span>Type</span></p>
-        </div>
-        <button class="btn">Abilities</button>
-        <div class="poke-profile-pic">
-          <div class="steamer">
-            <div class="icon">
-              <img src="img/pichu2.png" alt="" />
-            </div>
-            <p class="name">Pichu</p>
-            <p class="p number">Evo: 1</p>
-          </div>
-          <div class="steamer">
-            <div class="icon">
-              <img src="img/pikachu-evo.png" alt="" />
-            </div>
-            <p class="name">Pikachu</p>
-            <p class="p number">Evo: 2</p>
-          </div>
-          <div class="steamer">
-            <div class="icon">
-              <img src="img/raichu-evo.jpg" alt="" />
-            </div>
-            <p class="name">Raichu</p>
-            <p class="p number">Evo: 3</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="background"></div>
+      <div class="buttons"></div>
+    </header>
+    <div class="container">
+      <ol id="pokedex"></ol>
     </div>
 
     <script src="app.js"></script>
   </body>
 </html>
-
 
 <!-- FINISH CHANGING CLASS/ID TO NEW NAMES -->

@@ -3,311 +3,76 @@
 *::after {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 :root {
-  --clr-dark: rgb(13, 17, 19);
-  --clr-light: white;
-  --clr-accent: rgb(222, 52, 0);
-  --clr-accent-dark: rgb(163, 38, 0);
-  --clr-secondary: rgb(0, 76, 163);
-
-  --br: 0.5em;
-  --transisiton: transform 250ms cubic-bezier(0.21, 1.06, 0.81, 1.01);
+  --poke-red: #ff0000;
+  --poke-drkred: #cc0000;
+  --poke-blue: #3b4cca;
+  --poke-yellow: #ffde00;
+  --poke-dirtyyellow: #b3a125;
+}
+header {
+  background-color: white;
+  height: 110px;
+  box-shadow: 0px -5px 30px var(--poke-blue);
 }
 body {
-  /* background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); */
-  font-family: sans-serif;
-  min-height: 100vh;
-  // display: grid;
-  place-items: center;
-  background: var(--clr-dark);
-  color: var(--clr-light);
-
-  //body background
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  background-size: 400%, 400%;
-  background-repeat: round repeat-x;
-  animation: gradient 15s ease infinite;
-  overflow: hidden;
+  background-color: #444;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-a {
-  text-decoration: none;
-  color: var(--clr-light);
-}
-
-.pokegrid {
+.logoHeader {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 100px;
-}
-.pokecard {
-  position: relative;
-  width: 12.5em;
-  cursor: pointer;
-  margin: 7em;
-  margin-right: -2em;
-}
-.thumbnail {
-    width: 200px;
-}
-
-.blue-level {
-  color: cyan;
-}
-.green {
-  color: green;
-}
-.white {
-  color: white;
-}
-
-.fa-bolt {
-  color: gold;
-}
-
-img {
-  max-width: 100%;
-}
-
-.btn {
-  cursor: pointer;
-  border: 0;
-  background: var(--clr-secondary);
-  border-radius: 100vw;
-  color: var(--clr-light);
-  padding: 0.5em 1.5em;
-  font-weight: bold;
-}
-.small-script {
-  font-size: 14px;
-  margin: 5px;
-  font-family: sans-serif;
-  opacity: 0.5;
-  color: var(--clr-secondary);
-}
-
-@media only screen and (min-width: 390px) and (max-height: 844px) {
-  header {
-    margin-bottom: 50px;
-  }
-}
-@media screen and (max-width: 1920px) {
-  /* insert styles here */
-  header {
-    margin-bottom: 250px;
-  }
-}
-
-.poke-profile-pic {
-  display: flex;
-  text-align: center;
-
-  img {
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-  }
-}
-
-.type {
-  position: absolute;
-  top: 0;
-  right: 1em;
-  z-index: 100;
-  font-weight: bold;
-  font-size: 1.125rem;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 0.5em 0.5em 0.75em;
-  clip-path: polygon(100% 0%, 100% 100%, 50% 85%, 0 100%, 0% 100%, 0 0);
-  transition: var(--transisiton);
-}
-
-.front {
-  transition: 250ms;
-
-  .thumbnail {
-    border-radius: var(--br);
-    max-width: 200px;
-    max-height: 275px;
-  }
-
-  .name {
-    margin: 0.75em 0;
-  }
-
-  .stats {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .poke-profile-pic img {
-    border: 2px solid var(--clr-dark);
-
-    &:nth-of-type(1) {
-      transform: translateX(50%);
-      z-index: 1;
-    }
-    &:nth-of-type(2) {
-      transform: translateX(25%);
-    }
-  }
-}
-
-.back {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1em;
-  transform: translateY(35%);
-
-  .green {
-    color: green;
-  }
-  .white {
-    color: white;
-  }
-
-  .stream-info {
-    columns: 2;
-    column-rule: 1px solid rgb(255, 251, 0);
-    margin: 1em 0;
-  }
-
-  .game-stat {
-    font-size: 1.25rem;
-    text-align: center;
-
-    span {
-      display: block;
-      font-size: 0.85rem;
-    }
-  }
+  margin-left: 10px;
+}
+.logo {
+  width: 100px;
 }
 
-.background {
-  background: rgb(40, 46, 54);
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    );
-  background-size: 12.5em;
-  background-repeat: round;
-  background-position: top;
-
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  transform: scale(0.5);
-
-  border-radius: var(--br);
-  opacity: 0;
+#pokedex {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 20px;
+}
+.poke-card {
+  list-style: none;
+  padding: 40px;
+  background-color: gainsboro;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
 }
 
-.pokecard:hover {
-  .type {
-    transform: translate(150%, -82.5%);
-  }
-
-  .front {
-    transform: translateY(-35%) scale(0.8);
-
-    .name {
-      animation: gameName 250ms forwards;
-    }
-
-    .stats {
-      opacity: 0;
-    }
-  }
-
-  .back {
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 250ms ease, opacity 150ms linear;
-
-    .poke-profile-pic {
-      width: 100%;
-      justify-content: space-between;
-    }
-    .steamer {
-      font-size: 0.9rem;
-    }
-
-    .name {
-      font-weight: bold;
-    }
-  }
-
-  .background {
-    transition: transform 250ms cubic-bezier(0.21, 1.06, 0.81, 1.01),
-      opacity 100ms linear;
-    opacity: 1;
-    transform: scale(1.4, 1.2);
-    border: yellow solid 2px;
-    clip-path: polygon(
-      29% 35%,
-      69% 35%,
-      69% 0,
-      100% 0,
-      100% 100%,
-      0 100%,
-      0 0,
-      29% 0
-    );
-  }
+.container {
+  padding: 60px;
+  margin: 0 auto;
 }
 
-@keyframes gameName {
-  0% {
-    text-align: left;
-    opacity: 1;
-  }
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 32px;
+}
+h2 {
+  text-transform: uppercase;
+}
+img {
+  width: 150px;
+}
 
+.poke-card:hover {
+  animation: bounce 0.5s linear;
+}
+@keyframes bounce {
   20% {
-    text-align: left;
-    opacity: 0;
-  }
-
-  50% {
-    text-align: center;
-    opacity: 0;
-    transform: scale(1.2);
-  }
-
-  100% {
-    text-align: center;
-    opacity: 1;
-    transform: scale(1.2);
+    transform: translateY(-10px);
   }
 }
 
-//body gradient animation
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+
+/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important;} /* End https://www.cursors-4u.com */
