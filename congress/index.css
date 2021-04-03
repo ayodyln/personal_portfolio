@@ -10,6 +10,9 @@
   --blue: #3c3b6e;
   --br: 0.5em;
 }
+body {
+  background: white;
+}
 
 .congressGrid {
   display: flex;
@@ -35,7 +38,7 @@ main {
 .personFig {
   width: 150px;
   margin: 1rem;
-  box-shadow: 0px 3px 3px black;
+  
 }
 
 header {
@@ -46,18 +49,40 @@ header {
   color: var(--blue);
   /* border-bottom: black solid; */
   box-shadow: 0px 2px 10px black;
-  height: 5em;
+  height: 135px;
+  
 }
 
-.buttonHeader {
-  margin: 10px;
+.headerlogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 25px;
 }
-.buttons {
-  margin: 5px;
-  padding: 10px;
-  background-color: var(--red);
-  color: var(--white);
-  border: none;
+
+.header-img {
+  width: 5em;
+}
+
+#portfolio-link {
+  border-left-style: solid;
+}
+.menulink {
+  list-style: none;
+  height: 135px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+}
+.menulink > a {
+  text-decoration: none;
+  color: #b42033;
+  font-size: 24px;
+  font-weight: bold;
+  
 }
 
 header > h1 {
@@ -92,6 +117,57 @@ footer {
   color: var(--grey);
 }
 
-button {
-  border-radius: 5%;
+
+ /* buttons */
+
+ .button-section {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 25px;
+ }
+ .button-section > h1 {
+   font-size: 54px;
+ }
+ .line {
+   width: 250px;
+   height: 2px;
+   background-color: #3c3b6e;
+   margin: 0;
+ }
+
+.buttonDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 40px;
 }
+
+.btn {
+  width: 225px;
+  height: 100px;
+  margin: 20px;
+  font-size: 32px;
+  border: none;
+  background-color: var(--blue);
+  color: white;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 0 #b42033;
+  transition: ease-out 0.3s;
+  outline: none;
+}
+
+.btn:hover {
+  box-shadow: inset 225px 0 0 0 #b42033;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
