@@ -2,7 +2,10 @@ import { senators } from "../data/senators.js";
 import { representatives } from "../data/representatives.js";
 import { removeChildren } from "../utility_functions/index.js";
 
+console.log(senators)
+
 const congressGrid = document.querySelector(".congressGrid");
+
 const seniorityButton = document.querySelector("#seniorityButton");
 const birthdayButton = document.querySelector("#birthdayButton");
 
@@ -39,12 +42,11 @@ function getSimplifiedPeople(peopleList) {
   });
 }
 
-populateCongressDiv(getSimplifiedPeople(representatives));
-
 const repubButton = document.querySelector("#republicans");
 repubButton.addEventListener("click", () => {
   showRepublicans();
 });
+
 function showRepublicans() {
   //const repubs = representatives.filter(rep => rep.party === 'R')
   // TODO:  Looks like filter first then map would be best
@@ -56,5 +58,35 @@ function showRepublicans() {
     }
     return smallRepub;
   });
-  console.log(senators);
+  // console.log(senators)
+  console.log(representatives)
 }
+
+const demoButton = document.querySelector("#democrats")
+demoButton.addEventListener("click", () => {
+  showDemocrats()
+})
+
+function showDemocrats () {
+  const democ = representatives.map((dem) => {
+    let smallDemo = {};
+    if (dem.party === "D") {
+      smallDemo.id = dem.id;
+      smallDemo.name = `${dem.first_name} ${dem.middle_name} ${dem.last_name}`
+    }
+    return smallDemo
+  })
+  // console.log(senators)
+  console.log(representatives)
+}
+
+const indeButton = document.querySelector("#independents")
+indeButton.addEventListener("click", () => {
+  showIndependents()
+})
+
+
+
+// calling functions
+
+populateCongressDiv(getSimplifiedPeople(representatives, senators));
