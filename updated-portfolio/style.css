@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+
+/* https://mattfarley.ca/ */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+:root {
+  --dark: #0b0c10;
+  --dark-gry: #1f2833;
+  --light-gry: #c5c6c7;
+  --teal: #66fcf1;
+  --darkteal: #45a29e;
+
+  /* color options two  */
+
+  --dark-purple: #0c0032;
+  --purple: #190061;
+  --blurple: #240090;
+  --bright-blurple: #3500d3;
+  --dark-black: #282828;
+}
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  /* background-image: linear-gradient(to top right, var(--blurple) 0%, var(--dark) 100%); */
+  background-color: var(--dark-black);
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+/* 4k Desktop */
+
+/* desktop */
+
+/* tablet */
+
+/* mobile */
+/* @media screen (min-width: 390px) {
+} */
+
+/* bio-body */
+body {
+  overflow-x: hidden;
+}
+/* .bio {
+
+} */
+.bio-inner {
+  /* background: rgba(255, 255, 255, 0.5); */
+  padding: 10px;
+  /* border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    box-shadow: 0px 10px 10px black; */
+  height: 450px;
+  color: white;
+}
+.profile-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1em;
+}
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+}
+p {
+  text-align: center;
+}
+
+/* nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 8vh;
+  font-family: sans-serif;
+  background: var(--blurple);
+  z-index: 99;
+  /* overflow-x: hidden; */
+}
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  margin-left: 20px;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  
+  /* overflow-x: hidden; */
+}
+.nav-links li {
+  list-style: none;
+  margin-right: 35px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.burger {
+  margin-right: 20px;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  position: absolute;
+  right: 0px;
+  height: 92vh;
+  top: 8vh;
+  background-color: var(--blurple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 99;
+  width: 30%;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+  display: hidden;
+}
+.nav-links li {
+  opacity: 0;
+}
+.burger {
+  display: block;
+  cursor: pointer;
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* -------------------- */
+     /* summary-bio */
+/* -------------------- */   
+.summary-bio {
+    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.figure-knowledge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.summary-biocard {
+  background-color: gray;
+  margin: 25px;
+  width: 95%;
+  height: 200px;
+}
