@@ -1,116 +1,99 @@
 //Total Pokemon: 898; Target for assignmetn: 25
 
+import { removeChildren } from "../utility_functions/index.js";
+
 const pokeGrid = document.querySelector(".pokeGrid");
-const loadButton = document.querySelector(".loadPoke");
+
+const loadButton = document.querySelector(".loadPokemon");
+const genTwoButton = document.querySelector('.gentwo-button')
+const genThreeButton = document.querySelector('.genthree-button')
 
 loadButton.addEventListener("click", () => {
   loadPage();
 });
 
+genTwoButton.addEventListener('click', () => {
+  genTwoPage();
+})
+
+genThreeButton.addEventListener('click', () => {
+  genThreePage()
+})
+
+
 async function getAPIData(url) {
   try {
     const response = await fetch(url); // try getting data from the API at the url provided
-    const data = await response.json();
-    // convert the response into JSON
-    console.log(data)
-    return data;
-    // return the data from the function to whoever called it
+    const data = await response.json(); // convert the response into JSON
+    return data; // return the data from the function to whoever called it
   } catch (error) {
     // must have been an error
     console.log(error);
   }
 }
 
-// function fetchPokemonData(pokemon) {
-//   let url = pokemon.url; // <--- this is saving the pokemon url to a      variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
-//   fetch(url)
-//     .then((response) => response.json())
-//     .then((pokeData) => { // two ways to define a function, => or check on line 56
-//       console.log(pokeData);
-//     });
-// }
-
-// function fetchPokeUrl() {
-//   let url = data.url;
-//   fetch(url)
-//     .then((response) => response.json())
-//     .then((pokeData) => {
-//       console.log(pokeData);
-//     });
-// }
-
-
-
-
 function loadPage() {
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then((data) => {
-    for (const singlePokemon of data.results) {
-      populatePokeCard(singlePokemon);
+  removeChildren(pokeGrid)
+  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`).then(
+    async (data) => {
+      for (const singlePokemon of data.results) {
+        await getAPIData(singlePokemon.url).then((pokeData) =>
+          populatePokeCard(pokeData)
+        );
+      }
     }
-  });
-}
+  );
+};
 
-
-
-loadPage()
 
 
 function populatePokeCard(singlePokemon) {
-  //use the same html as code example for assignment page for cardflip example
-
+  // use the same html as in the CodePen Card flip example
   let pokeScene = document.createElement("div");
+  pokeScene.className = "scene";
   let pokeCard = document.createElement("div");
-
-  const pokeFigureFront = document.createElement("figure");
-  const pokeImgFront = document.createElement("img");
-  const pokeFigcapFront = document.createElement("figcaption");
-
-  //front
-  // pokeImgFront.src = poke.imgURL;
-
-  //make card front and back
-  //append them all to pokegrid
-
-  console.log(singlePokemon);
+  pokeCard.className = "card";
+  pokeCard.addEventListener("click", () => {
+    pokeCard.classList.toggle("is-flipped");
+  });
+  // make the card front
+  pokeCard.appendChild(populateCardFront(singlePokemon));
+  // make the card back
+  pokeCard.appendChild(populateCardBack(singlePokemon));
+  // append them all to pokeGrid
+  pokeScene.appendChild(pokeCard);
+  pokeGrid.appendChild(pokeScene);
 }
 
-// ****----------------------------------**** //
+function populateCardFront(pokemon) {
+  console.log(pokemon);
+  let pokeFront = document.createElement("div");
+  pokeFront.className = "card__face card__face--front";
+  let frontLabel = document.createElement("p");
+  frontLabel.textContent = pokemon.name;
+  let frontImage = document.createElement("img");
+  frontImage.className = 'front-img-pokemon'
+  frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
+  pokeFront.appendChild(frontImage);
+  pokeFront.appendChild(frontLabel);
+  return pokeFront;
+}
 
-//TEST CODE - me trying to learn more about api data. Above code was confusing me too much.
+function populateCardBack(pokemon) {
+  let pokeBack = document.createElement("div");
+  pokeBack.className = "card__face card__face--back";
+  let backLabel = document.createElement("p");
+  backLabel.textContent = `Moves: ${pokemon.moves.length}`;
+  pokeBack.appendChild(backLabel);
+  return pokeBack;
+}
 
-// const pokeGrid = document.querySelector('.pokegrid')
-
-//   // this function fetchs my desired api, and converts to a json. Then gathers the data I want.
-// function pokeDataApp() {
-//   fetch("https://pokeapi.co/api/v2/pokemon?limit=25")
-//     .then((response) => response.json())
-//     .then(function (allpokemon) {
-//       allpokemon.results.forEach(function (pokemon) {
-//         fetchPokemonData(pokemon);
-//       });
-//     });
-// }
-
-// function fetchPokemonData(pokemon) {
-//   let url = pokemon.url; // <--- this is saving the pokemon url to a      variable to us in a fetch.(Ex: https://pokeapi.co/api/v2/pokemon/1/)
-//   fetch(url)
-//     .then((response) => response.json())
-//     .then((pokeData) => { // two ways to define a function, => or check on line 56
-//       console.log(pokeData);
-//     });
-// }
-
-// // was learning this ^^^^^^
-
-// function createPokeImage(pokeID, pokeGrid){
-//   let pokeImgContainer = document.createElement('div')
-//   pokeImgContainer.classList.add('image')
-
-//   let pokeImage = document.createElement('img')
-//   pokeImage.srcset = `https://pokeres.bastionbot.org/images/pokemon/${pokeID}.png`
-
-//   pokeImgContainer.append(pokeImage);
-//   pokeGrid.append(pokeImgContainer);
-// }
-
-// pokeDataApp();
+function getImageFileName(pokemon) {
+  if (pokemon.id < 10) {
+    return `00${pokemon.id}`;
+  } else if (pokemon.id > 9 && pokemon.id < 100) {
+    return `0${pokemon.id}`;
+  } else if (pokemon.id > 99 && pokemon.id < 1000) {
+    return `${pokemon.id}`
+  }
+}
