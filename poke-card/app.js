@@ -4,61 +4,64 @@ import { removeChildren } from "../utility_functions/index.js";
 
 const pokeGrid = document.querySelector(".pokeGrid");
 
-
+//loader
+// window.addEventListener('load', () => {
+//   const preLoad = document.querySelector('.preload')
+//   preLoad.classList.add('preload-finish')
+// })
 
 //search bar
 
-let pokeSearch = []
-const searchBar = document.querySelector('#searchBar')
+// let pokeSearch = []
+// const searchBar = document.querySelector('#searchBar')
 
-searchBar.addEventListener('keyup', (e) => {
-  const searchString = e.target.value
-  const filteredPokemonSearch = pokeSearch.filter( (pokemon) => {
-    return (
-      pokemon.name.includes(searchString) || pokemon.id.includes(searchString)
-    )
-  })
-  console.log(filteredPokemonSearch)
-})
+// searchBar.addEventListener('keyup', (e) => {
+//   const searchString = e.target.value
+//   const filteredPokemonSearch = pokeSearch.filter( (pokemon) => {
+//     return (
+//       pokemon.name.includes(searchString) || pokemon.id.includes(searchString)
+//     )
+//   })
+//   console.log(filteredPokemonSearch)
+// })
 
 //Buttons
 
 const loadButton = document.querySelector("#genone-button");
-const genTwoButton = document.querySelector('#gentwo-button')
-const genThreeButton = document.querySelector('#genthree-button')
-const genFourButton = document.querySelector('#genfour-button')
-const genFiveButton = document.querySelector('#genfive-button')
-const genSixButton = document.querySelector('#gensix-button')
-const genSevenButton = document.querySelector('#genseven-button')
-const genEightButton = document.querySelector('#geneight-button')
+const genTwoButton = document.querySelector("#gentwo-button");
+const genThreeButton = document.querySelector("#genthree-button");
+const genFourButton = document.querySelector("#genfour-button");
+const genFiveButton = document.querySelector("#genfive-button");
+const genSixButton = document.querySelector("#gensix-button");
+const genSevenButton = document.querySelector("#genseven-button");
+const genEightButton = document.querySelector("#geneight-button");
 
 loadButton.addEventListener("click", () => {
   loadPage();
 });
-genTwoButton.addEventListener('click', () => {
+genTwoButton.addEventListener("click", () => {
   genTwoPage();
-})
-genThreeButton.addEventListener('click', () => {
-  genThreePage()
-})
-genFourButton.addEventListener('click', () => {
-  genFourPage()
-})
-genFiveButton.addEventListener('click', () => {
-  genFivePage()
-})
-genSixButton.addEventListener('click', () => {
-  genSixPage()
-})
-genSevenButton.addEventListener('click', () => {
-  genSevenPage()
-})
+});
+genThreeButton.addEventListener("click", () => {
+  genThreePage();
+});
+genFourButton.addEventListener("click", () => {
+  genFourPage();
+});
+genFiveButton.addEventListener("click", () => {
+  genFivePage();
+});
+genSixButton.addEventListener("click", () => {
+  genSixPage();
+});
+genSevenButton.addEventListener("click", () => {
+  genSevenPage();
+});
 // genEightButton.addEventListener('click', () => {
 //   genEightPage()
 // })
 
 //buttons end
-
 
 // document.location.reload(true)
 
@@ -76,7 +79,7 @@ async function getAPIData(url) {
 }
 
 function loadPage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -86,10 +89,10 @@ function loadPage() {
       }
     }
   );
-};
+}
 
 function genTwoPage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=151`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -99,10 +102,10 @@ function genTwoPage() {
       }
     }
   );
-};
+}
 
 function genThreePage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=135&offset=251`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -115,7 +118,7 @@ function genThreePage() {
 }
 
 function genFourPage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=107&offset=386`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -128,7 +131,7 @@ function genFourPage() {
 }
 
 function genFivePage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=156&offset=493`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -141,7 +144,7 @@ function genFivePage() {
 }
 
 function genSixPage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=72&offset=649`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -154,7 +157,7 @@ function genSixPage() {
 }
 
 function genSevenPage() {
-  removeChildren(pokeGrid)
+  removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=88&offset=721`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
@@ -211,14 +214,14 @@ function populateCardFront(pokemon) {
   frontLabel.textContent = pokemon.name;
 
   let frontImage = document.createElement("img");
-  frontImage.className = 'front-img-pokemon'
+  frontImage.className = "front-img-pokemon";
   frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
 
-  let pokemonID = document.createElement('h2');
+  let pokemonID = document.createElement("h2");
   pokemonID.className = ".pokeID";
-  pokemonID.textContent = pokemon.id
+  pokemonID.textContent = pokemon.id;
 
-  pokeFront.appendChild(pokemonID)
+  pokeFront.appendChild(pokemonID);
   pokeFront.appendChild(frontImage);
   pokeFront.appendChild(frontLabel);
 
@@ -229,10 +232,45 @@ function populateCardBack(pokemon) {
   let pokeBack = document.createElement("div");
   pokeBack.className = "card__face card__face--back";
 
+  let pokeBackImgs = document.createElement("div"); //img div
+  pokeBackImgs.className = "pokeback-img";
+
+  let pokeBackSprite = document.createElement("img");
+  pokeBackSprite.className = "pokespriteback";
+  pokeBackSprite.src = pokemon.sprites.front_default;
+
+  let pokeBackSprite_back = document.createElement("img");
+  pokeBackSprite_back.className = "pokespriteback";
+  pokeBackSprite_back.src = pokemon.sprites.front_shiny;
+
+  let pokeBackText = document.createElement("div"); //text div
+  pokeBackText.className = "pokebacktext";
+
   let backLabel = document.createElement("p");
   backLabel.textContent = `Moves: ${pokemon.moves.length}`;
 
-  pokeBack.appendChild(backLabel);
+  let backLabelForms = document.createElement("p");
+  backLabelForms.textContent = `Forms: ${pokemon.forms.length}`;
+
+  let backLabelTypes = document.createElement("p");
+  backLabelTypes.textContent = `Types: ${pokemon.types
+    .map((type) => type.type.name)
+    .join(", ")}`;
+
+  let backlabelWeight = document.createElement("p");
+  backlabelWeight.textContent = `Weight: ${pokemon.weight}`;
+
+  pokeBackImgs.appendChild(pokeBackSprite);
+  pokeBackImgs.appendChild(pokeBackSprite_back);
+
+  pokeBack.appendChild(pokeBackImgs); //div for pokemon back img sprites.
+
+  pokeBackText.appendChild(backLabel);
+  pokeBackText.appendChild(backLabelForms);
+  pokeBackText.appendChild(backLabelTypes);
+  pokeBackText.appendChild(backlabelWeight);
+
+  pokeBack.appendChild(pokeBackText);
 
   return pokeBack;
 }
@@ -243,10 +281,8 @@ function getImageFileName(pokemon) {
   } else if (pokemon.id > 9 && pokemon.id < 100) {
     return `0${pokemon.id}`;
   } else if (pokemon.id > 99 && pokemon.id < 1000) {
-    return `${pokemon.id}`
+    return `${pokemon.id}`;
   }
 }
 
 //end of population section
-
-

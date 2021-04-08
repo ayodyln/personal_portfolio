@@ -1,65 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 :root {
-  --kyogre-drk-blue: #006090;
-  --kyogre-blue: #0078c0;
-  --kyogre-coral-pink: #f04860;
-  --kyogre-v-green: #c0d8d8;
-
-  --charizard-red: #cd5241;
-  --charizard-orange: #ee8329;
-  --charizard-blue: #419eaf;
-  --charizard-yello: #eeb45b;
-
-  --poke-red: #ff0000;
-  --poke-drk-red: #cc0000;
-  --poke-blue: #3b4cca;
-  --poke-yellow: #ffde00;
-  --poke-drk-yellow: #b3a125;
-
   --fav-lightgrey: #d8d8d8;
   --fav-blue: #569dc7;
   --fav-red: #e52b2b;
   --fav-black: #222222;
 }
+
 header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap:wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   background-color: var(--fav-lightgrey);
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 5px 5px rgba(229, 43, 43, 0.8);
+          box-shadow: 0px 5px 5px rgba(229, 43, 43, 0.8);
 }
+
 body {
   background-color: var(--fav-black);
-}
-
-.logoheader {
-  display: flex;
-  align-items: flex-end;
-  align-items: center;
-  flex-direction: row;
-}
-.pokeball-img {
-  width: 150px;
-}
-.logoheader > h1 {
-  font-size: 52px;
-}
-
- /* buttons */
-.genbutton {
-  margin: 5px;
-  width: 125px;
-  height: 75px;
-  font-size: 28px;
-  font-weight: bold;
 }
 
 footer {
@@ -70,100 +51,263 @@ footer {
   background-color: var(--fav-lightgrey);
   color: var(--fav-black);
   text-align: center;
-  padding: 32px;
-  font-size: 22px;
+  padding: 8px;
+  font-size: 16px;
+  margin-top: 50px;
 }
+
+.logoheader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.pokeball-img {
+  width: 150px;
+}
+
+.logoheader > h1 {
+  font-size: 52px;
+}
+
+/* buttons */
+.genbutton {
+  margin: 5px;
+  width: 125px;
+  height: 75px;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--fav-lightgrey);
+  background: var(--fav-black);
+  letter-spacing: 2px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  border-style: none;
+}
+
+.genbutton:hover {
+  color: #e52b2b;
+  border-style: var(--fav-red);
+}
+
 h3 {
   text-align: center;
   text-transform: capitalize;
 }
 
 /* pokesection */
+main {
+  margin-top: 10vh;
+}
 
 .pokeGrid {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 25px;
+  margin-bottom: 50px;
+  margin-top: 200px;
 }
 
 .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-top: 5px;
 }
 
 .front-img-pokemon {
-  width: 180px;
+  width: 190px;
 }
 
 .scene {
-  width: 200px;
-  height: 260px;
-  border: 1px solid #ccc;
+  width: 250px;
+  height: 310px;
   margin: 40px 10px;
-  perspective: 600px;
+  -webkit-perspective: 600px;
+          perspective: 600px;
 }
 
 .card {
   width: 100%;
   height: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
   transition: transform 1s;
-  transform-style: preserve-3d;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  border: 1px solid var(--fav-red);
+  background-color: var(--fav-black);
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px var(--fav-red);
+          box-shadow: 0 0 10px var(--fav-red);
 }
 
 .card.is-flipped {
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .card__face {
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 .card__face--front {
   color: var(--fav-lightgrey);
 }
+
 .card__face--back {
   color: var(--fav-lightgrey);
-  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  position: absolute;
+  width: 200px;
+  height: 260px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
-
 
 /* scrollbar */
 body::-webkit-scrollbar {
   width: 0.75em;
 }
- 
+
 body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
- 
+
 body::-webkit-scrollbar-thumb {
   background-color: var(--fav-red);
 }
 
-/* search bar */
-#searchBar {
-  width: 25%;
-  height: 32px;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px 10px;
-  font-size: 14px;
+.button-totop {
+  position: fixed;
+  top: 85%;
+  right: 0.5%;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
-#searchWrapper {
-  position: relative;
+.back_to_top {
+  background: var(--fav-black);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 0px 10px var(--fav-lightgrey);
+          box-shadow: 0px 0px 10px var(--fav-lightgrey);
 }
 
-#searchWrapper::after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  right: 15px;
+.back-top-a {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  color: var(--fav-lightgrey);
 }
 
+.pokeball-img {
+  -webkit-animation: rotation 2s infinite alternate;
+          animation: rotation 2s infinite alternate;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  to {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  to {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+}
+
+.pokespriteback {
+  width: 200px;
+}
+
+.pokeback-img {
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pokebacktext {
+  font-size: 18px;
+  text-align: left;
+  width: 200px;
+  letter-spacing: 2px;
+}
+
+p {
+  font-weight: 500;
+}
+/*# sourceMappingURL=style.css.map */
