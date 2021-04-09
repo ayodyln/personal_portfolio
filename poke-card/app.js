@@ -10,20 +10,6 @@ const pokeGrid = document.querySelector(".pokeGrid");
 //   preLoad.classList.add('preload-finish')
 // })
 
-//search bar
-
-// let pokeSearch = []
-// const searchBar = document.querySelector('#searchBar')
-
-// searchBar.addEventListener('keyup', (e) => {
-//   const searchString = e.target.value
-//   const filteredPokemonSearch = pokeSearch.filter( (pokemon) => {
-//     return (
-//       pokemon.name.includes(searchString) || pokemon.id.includes(searchString)
-//     )
-//   })
-//   console.log(filteredPokemonSearch)
-// })
 
 //Buttons
 
@@ -63,8 +49,6 @@ genSevenButton.addEventListener("click", () => {
 
 //buttons end
 
-// document.location.reload(true)
-
 //Calling for api, awaiting resonse and return it as data, then functions for specific data ranges.
 
 async function getAPIData(url) {
@@ -74,9 +58,12 @@ async function getAPIData(url) {
     return data; // return the data from the function to whoever called it
   } catch (error) {
     // must have been an error
-    console.log(error);
+    // console.log(error);
+    window.alert("Error Fetching Data")
   }
 }
+
+
 
 function loadPage() {
   removeChildren(pokeGrid);
@@ -184,6 +171,18 @@ function genSevenPage() {
 
 //calling api section end
 
+//search bar
+
+const fetchButton = document.querySelector('.fetchPokemonByID')
+
+fetchButton.addEventListener('click', () => {
+  let pokeId = prompt("Pokemon ID or Name")
+  getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
+    (data) => populatePokeCard(data)
+  ).catch(error => console.log(error)) 
+  // console.log(pokeId)
+})
+
 //populating page section
 
 function populatePokeCard(singlePokemon) {
@@ -215,7 +214,8 @@ function populateCardFront(pokemon) {
 
   let frontImage = document.createElement("img");
   frontImage.className = "front-img-pokemon";
-  frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
+  // frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
+  frontImage.src = getImageFileName(pokemon)
 
   let pokemonID = document.createElement("h2");
   pokemonID.className = ".pokeID";
@@ -276,13 +276,20 @@ function populateCardBack(pokemon) {
 }
 
 function getImageFileName(pokemon) {
-  if (pokemon.id < 10) {
-    return `00${pokemon.id}`;
-  } else if (pokemon.id > 9 && pokemon.id < 100) {
-    return `0${pokemon.id}`;
-  } else if (pokemon.id > 99 && pokemon.id < 1000) {
-    return `${pokemon.id}`;
-  }
+  // if (pokemon.id < 10) {
+  //   return `00${pokemon.id}`;
+  // } else if (pokemon.id > 9 && pokemon.id < 100) {
+  //   return `0${pokemon.id}`;
+  // } else if (pokemon.id > 99 && pokemon.id < 899) {
+  //   return `${pokemon.id}`;
+  // }
+
+  let pokeId
+    if (pokemon.id < 10) pokeId = `00${pokemon.id}`
+    if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
+    if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id
+
+    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }
 
 //end of population section

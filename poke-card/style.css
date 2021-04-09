@@ -20,23 +20,30 @@ header {
   z-index: 2;
   width: 100%;
   top: 0;
+  background-color: var(--fav-lightgrey);
+  -webkit-box-shadow: 0px 5px 5px rgba(229, 43, 43, 0.8);
+          box-shadow: 0px 5px 5px rgba(229, 43, 43, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logoheader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background-color: var(--fav-lightgrey);
-  -webkit-box-shadow: 0px 5px 5px rgba(229, 43, 43, 0.8);
-          box-shadow: 0px 5px 5px rgba(229, 43, 43, 0.8);
 }
 
 body {
@@ -54,22 +61,6 @@ footer {
   padding: 8px;
   font-size: 16px;
   margin-top: 50px;
-}
-
-.logoheader {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .pokeball-img {
@@ -122,7 +113,7 @@ main {
           justify-content: center;
   margin: 25px;
   margin-bottom: 50px;
-  margin-top: 200px;
+  margin-top: -150px;
 }
 
 .card {
@@ -309,5 +300,36 @@ body::-webkit-scrollbar-thumb {
 
 p {
   font-weight: 500;
+}
+
+.searchbutton-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 12em;
+}
+
+.fetchPokemonByID {
+  padding: 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  background: var(--fav-black);
+  color: var(--fav-lightgrey);
+  -webkit-box-shadow: 0 0 10px var(--fav-red);
+          box-shadow: 0 0 10px var(--fav-red);
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.fetchPokemonByID:hover {
+  color: var(--fav-red);
 }
 /*# sourceMappingURL=style.css.map */
