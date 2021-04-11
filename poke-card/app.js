@@ -216,6 +216,8 @@ function populateCardFront(pokemon) {
   frontImage.className = "front-img-pokemon";
   // frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
   frontImage.src = getImageFileName(pokemon)
+  // frontImage.src = altImg(pokemon)
+  
 
   let pokemonID = document.createElement("h2");
   pokemonID.className = ".pokeID";
@@ -274,6 +276,14 @@ function populateCardBack(pokemon) {
 
   return pokeBack;
 }
+
+// function altImg(pokemon) {
+//   if (`https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemon}.png` === false) {
+//     frontImage.src = pokemon.front_default
+//   } else if (`https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemon}.png` === true) {
+//     frontImage.src = getImageFileName(pokemon)
+//   }
+// }
 
 function getImageFileName(pokemon) {
   // if (pokemon.id < 10) {
