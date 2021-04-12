@@ -247,6 +247,19 @@ body::-webkit-scrollbar-thumb {
   color: var(--fav-lightgrey);
 }
 
+.back-top-a:hover {
+  color: var(--fav-red);
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+.back_to_top:hover {
+  -webkit-box-shadow: 0px 0px 10px var(--fav-red);
+          box-shadow: 0px 0px 10px var(--fav-red);
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
 .pokeball-img {
   -webkit-animation: rotation 2s infinite alternate;
           animation: rotation 2s infinite alternate;
@@ -321,15 +334,17 @@ p {
   border-radius: 20px;
   background: var(--fav-black);
   color: var(--fav-lightgrey);
-  -webkit-box-shadow: 0 0 10px var(--fav-red);
-          box-shadow: 0 0 10px var(--fav-red);
+  -webkit-box-shadow: 0 0 10px var(--fav-lightgrey);
+          box-shadow: 0 0 10px var(--fav-lightgrey);
   border: none;
   cursor: pointer;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
 }
 
 .fetchPokemonByID:hover {
   color: var(--fav-red);
+  -webkit-box-shadow: 0 0 10px var(--fav-red);
+          box-shadow: 0 0 10px var(--fav-red);
 }
 /*# sourceMappingURL=style.css.map */
