@@ -23,25 +23,25 @@ const genSevenButton = document.querySelector("#genseven-button");
 const genEightButton = document.querySelector("#geneight-button");
 
 loadButton.addEventListener("click", () => {
-  loadPage();
+  genPage(151, 0);
 });
 genTwoButton.addEventListener("click", () => {
-  genTwoPage();
+  genPage(100, 151);
 });
 genThreeButton.addEventListener("click", () => {
-  genThreePage();
+  genPage(135, 251);
 });
 genFourButton.addEventListener("click", () => {
-  genFourPage();
+  genPage(107, 386);
 });
 genFiveButton.addEventListener("click", () => {
-  genFivePage();
+  genPage(156, 493);
 });
 genSixButton.addEventListener("click", () => {
-  genSixPage();
+  genPage(72, 649);
 });
 genSevenButton.addEventListener("click", () => {
-  genSevenPage();
+  genPage(88, 721);
 });
 // genEightButton.addEventListener('click', () => {
 //   genEightPage()
@@ -65,7 +65,7 @@ async function getAPIData(url) {
 
 
 
-function loadPage() {
+/* function loadPage() {
   removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`).then(
     async (data) => {
@@ -146,6 +146,19 @@ function genSixPage() {
 function genSevenPage() {
   removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=88&offset=721`).then(
+    async (data) => {
+      for (const singlePokemon of data.results) {
+        await getAPIData(singlePokemon.url).then((pokeData) =>
+          populatePokeCard(pokeData)
+        );
+      }
+    }
+  );
+} */
+
+function genPage(limit, offset) {
+  removeChildren(pokeGrid);
+  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(
     async (data) => {
       for (const singlePokemon of data.results) {
         await getAPIData(singlePokemon.url).then((pokeData) =>
