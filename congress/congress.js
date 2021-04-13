@@ -11,16 +11,17 @@ const missedVotes = document.querySelector('#missedVotes')
 
 
 const senatorsButton = document.querySelector('#senators-button')
-let congressPeople 
+let congressPeople = 'senators'
+
 senatorsButton.addEventListener('click', () => {
   populateCongressDiv(getSimplifiedPeople(senators));
-  // congressPeople = getSimplifiedPeople(senators)
+  congressPeople = 'senators'
 })
 
 const representativesButton = document.querySelector('#representatives-button')
 representativesButton.addEventListener('click', () => {
   populateCongressDiv(getSimplifiedPeople(representatives))
-  // congressPeople = getSimplifiedPeople(representatives)
+  congressPeople = 'representatives'
 })
 
 // missedVotes.addEventListener('click', () => {
@@ -66,7 +67,8 @@ function getSimplifiedPeople(peopleList) {
       name: `${person.first_name}${middleName} ${person.last_name}`,
       imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
       seniority: parseInt(person.seniority, 10),
-      missed_votes_pct: person.missed_votes_pct
+      missed_votes_pct: person.missed_votes_pct,
+      party: person.party
     };
   });
 }
@@ -110,12 +112,15 @@ repubButton.addEventListener("click", () => {
 // }
 
 
-seniorityButton.addEventListener('click', () => senioritySort())
+seniorityButton.addEventListener('click', () => {
+  if (congressPeople == 'senators') senioritySort(senators)
+  if (congressPeople === 'representatives') senioritySort(representatives)
+})
 
 function senioritySort(congressPeople) {
   // if (populateCongressDiv(getSimplifiedPeople(congressPeople).sort((a, b) => a.seniority - b.seniority).reverse()));
   // if (populateCongressDiv(getSimplifiedPeople(representatives).sort((a, b) => a.seniority - b.seniority).reverse()));
-  populateCongressDiv(getSimplifiedPeople(senators).sort((a, b) => a.seniority - b.seniority).reverse())
+  populateCongressDiv(getSimplifiedPeople(congressPeople).sort((a, b) => a.seniority - b.seniority).reverse())
 }
 
 const filterCongressPeople = (chamber, politicalParty) => {
