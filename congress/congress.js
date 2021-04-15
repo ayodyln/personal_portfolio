@@ -78,39 +78,6 @@ repubButton.addEventListener("click", () => {
   populateCongressDiv(filterCongressPeople(senators, 'R'))
 });
 
-// function showRepublicans() {
-//   //const repubs = representatives.filter(rep => rep.party === 'R')
-//   // TODO:  Looks like filter first then map would be best
-//   const repubs = representatives.map((rep) => {
-//     let smallRepub = {};
-//     if (rep.party === "R") {
-//       smallRepub.id = rep.id;
-//       smallRepub.name = `${rep.first_name} ${rep.middle_name} ${rep.last_name}`;
-//     }
-//     return smallRepub;
-//   });
-//   // console.log(senators)
-//   console.log(representatives)
-// }
-
-// const demoButton = document.querySelector("#democrats")
-// demoButton.addEventListener("click", () => {
-//   showDemocrats()
-// })
-
-// function showDemocrats () {
-//   const democ = representatives.map((dem) => {
-//     let smallDemo = {};
-//     if (dem.party === "D") {
-//       smallDemo.id = dem.id;
-//       smallDemo.name = `${dem.first_name} ${dem.middle_name} ${dem.last_name}`
-//     }
-//     return smallDemo
-//   })
-//   // console.log(senators)
-//   console.log(representatives)
-// }
-
 
 seniorityButton.addEventListener('click', () => {
   if (congressPeople == 'senators') senioritySort(senators)
@@ -118,8 +85,6 @@ seniorityButton.addEventListener('click', () => {
 })
 
 function senioritySort(congressPeople) {
-  // if (populateCongressDiv(getSimplifiedPeople(congressPeople).sort((a, b) => a.seniority - b.seniority).reverse()));
-  // if (populateCongressDiv(getSimplifiedPeople(representatives).sort((a, b) => a.seniority - b.seniority).reverse()));
   populateCongressDiv(getSimplifiedPeople(congressPeople).sort((a, b) => a.seniority - b.seniority).reverse())
 }
 
