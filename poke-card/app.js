@@ -93,12 +93,24 @@ fetchButton.addEventListener('click', () => {
 
 class Pokemon {
   constructor(name, height, weight, abilities, moves) {
-    this.id = 25
+    this.id = 899
     this.name = name
     this.height = height
     this.width = weight
     this.abilities = abilities
     this.moves = moves
+    this.sprites = {
+      front_default: 'images/pokeball-front.png',
+      front_shiny: 'images/pokeball-shiny.png'
+    }
+    this.forms = []
+    this.types = [
+      {
+      type: {
+        name: "normal",
+      }
+      }
+    ]
   }
 }
 
