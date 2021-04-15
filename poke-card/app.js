@@ -22,6 +22,7 @@ const genSixButton = document.querySelector("#gensix-button");
 const genSevenButton = document.querySelector("#genseven-button");
 const genEightButton = document.querySelector("#geneight-button");
 
+
 loadButton.addEventListener("click", () => {
   genPage(151, 0);
 });
@@ -63,99 +64,6 @@ async function getAPIData(url) {
   }
 }
 
-
-
-/* function loadPage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-}
-
-function genTwoPage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=151`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-}
-
-function genThreePage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=135&offset=251`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-}
-
-function genFourPage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=107&offset=386`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-}
-
-function genFivePage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=156&offset=493`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-}
-
-function genSixPage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=72&offset=649`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-}
-
-function genSevenPage() {
-  removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=88&offset=721`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
-    }
-  );
-} */
-
 function genPage(limit, offset) {
   removeChildren(pokeGrid);
   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(
@@ -169,19 +77,6 @@ function genPage(limit, offset) {
   );
 }
 
-// function genEightPage() {
-//   removeChildren(pokeGrid)
-//   getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=89&offset=809`).then(
-//     async (data) => {
-//       for (const singlePokemon of data.results) {
-//         await getAPIData(singlePokemon.url).then((pokeData) =>
-//           populatePokeCard(pokeData)
-//         );
-//       }
-//     }
-//   );
-// }
-
 //calling api section end
 
 //search bar
@@ -189,11 +84,37 @@ function genPage(limit, offset) {
 const fetchButton = document.querySelector('.fetchPokemonByID')
 
 fetchButton.addEventListener('click', () => {
-  let pokeId = prompt("Pokemon ID or Name")
+  let pokeId = prompt("Pokemon ID or Name").toLowerCase()
   getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
     (data) => populatePokeCard(data)
   ).catch(error => console.log(error)) 
   // console.log(pokeId)
+})
+
+class Pokemon {
+  constructor(name, height, weight, abilities, moves) {
+    this.id = 25
+    this.name = name
+    this.height = height
+    this.width = weight
+    this.abilities = abilities
+    this.moves = moves
+  }
+}
+
+const newButton = document.querySelector('.newPokemon')
+newButton.addEventListener('click', () => {
+  let pokeName = prompt("What is the name of your new Pokemon?")
+  let pokeHeight = prompt("Pokemon Height?")
+  let pokeWeight = prompt("Pokemon Weight?")
+  let newPokemon = new Pokemon(
+    pokeName, 
+    pokeHeight, 
+    pokeWeight,
+    ['eat', 'sleep'],
+    ['study', 'drink', 'game']
+    )
+  populatePokeCard(newPokemon)
 })
 
 //populating page section
@@ -290,29 +211,20 @@ function populateCardBack(pokemon) {
   return pokeBack;
 }
 
-// function altImg(pokemon) {
-//   if (`https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemon}.png` === false) {
-//     frontImage.src = pokemon.front_default
-//   } else if (`https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokemon}.png` === true) {
-//     frontImage.src = getImageFileName(pokemon)
-//   }
-// }
-
 function getImageFileName(pokemon) {
-  // if (pokemon.id < 10) {
-  //   return `00${pokemon.id}`;
-  // } else if (pokemon.id > 9 && pokemon.id < 100) {
-  //   return `0${pokemon.id}`;
-  // } else if (pokemon.id > 99 && pokemon.id < 899) {
-  //   return `${pokemon.id}`;
-  // }
-
   let pokeId
     if (pokemon.id < 10) pokeId = `00${pokemon.id}`
     if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
     if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id
+    if (pokemon.id === 899) {
+      return `img/pokeball-logo.png`
+    }
 
     return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
 }
+
+(function () {
+  console.log('bir')
+})();
 
 //end of population section
