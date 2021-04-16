@@ -15,6 +15,10 @@
   --fav-black: #222222;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   position: fixed;
   z-index: 2;
@@ -340,11 +344,35 @@ p {
   cursor: pointer;
   -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
+  margin: 10px;
 }
 
 .fetchPokemonByID:hover {
   color: var(--fav-red);
   -webkit-box-shadow: 0 0 10px var(--fav-red);
           box-shadow: 0 0 10px var(--fav-red);
+}
+
+.searchbutton-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.pokebacktext {
+  background: var(--fav-lightgrey);
+  color: #222222;
+  border-radius: 10px;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

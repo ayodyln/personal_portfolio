@@ -6,7 +6,6 @@ import { removeChildren } from "../utility_functions/index.js";
 
 const congressGrid = document.querySelector(".congressGrid");
 const seniorityButton = document.querySelector('#Seniority')
-const birthdayButton = document.querySelector("#birthdayButton");
 const missedVotes = document.querySelector('#missedVotes')
 
 
@@ -45,7 +44,7 @@ function populateCongressDiv(simplifiedList) {
     let partyIcon = document.createElement('i')
         if (person.party === 'R') partyIcon.className = 'fas fa-republican'
         if (person.party === 'D') partyIcon.className = 'fas fa-democrat'
-        if (person.party === 'ID') partyIcon.className = 'fas fa-mitten'
+        if (person.party === 'ID') partyIcon.className = 'fas fa-users'
 
 
     figImg.src = person.imgURL;
@@ -77,6 +76,16 @@ const repubButton = document.querySelector("#republicans");
 repubButton.addEventListener("click", () => {
   populateCongressDiv(filterCongressPeople(senators, 'R'))
 });
+
+const demoButton = document.querySelector('#democrats')
+demoButton.addEventListener('click', () => {
+  populateCongressDiv(filterCongressPeople(senators, 'D'))
+})
+
+const IndependentButton = document.querySelector('#independents')
+IndependentButton.addEventListener('click', () => {
+  populateCongressDiv(filterCongressPeople(senators, 'ID'))
+})
 
 
 seniorityButton.addEventListener('click', () => {

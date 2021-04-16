@@ -35,6 +35,10 @@ main {
   font-family: sans-serif;
   text-align: center;
   font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .personFig {
   width: 150px;
@@ -174,10 +178,14 @@ footer {
   color: blue;
 }
 
-.fa-mitten {
-  color: green;
+.fa-users {
+  color: goldenrod;
 }
 
+i {
+  margin: 10px;
+  
+}
 
 
 
