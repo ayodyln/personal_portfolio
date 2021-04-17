@@ -6,7 +6,7 @@ import { removeChildren } from "../utility_functions/index.js";
 
 const congressGrid = document.querySelector(".congressGrid");
 const seniorityButton = document.querySelector('#Seniority')
-const missedVotes = document.querySelector('#missedVotes')
+const missedVotes = document.querySelector('#missedvotes')
 
 
 const senatorsButton = document.querySelector('#senators-button')
@@ -22,12 +22,6 @@ representativesButton.addEventListener('click', () => {
   populateCongressDiv(getSimplifiedPeople(representatives))
   congressPeople = 'representatives'
 })
-
-// missedVotes.addEventListener('click', () => {
-//   console.log(missedVotesMember(senators))
-//   //alert(missedVotesMember(senators))
-// }
-// )
 
 function populateCongressDiv(simplifiedList) {
   removeChildren(congressGrid)
@@ -45,8 +39,7 @@ function populateCongressDiv(simplifiedList) {
         if (person.party === 'R') partyIcon.className = 'fas fa-republican'
         if (person.party === 'D') partyIcon.className = 'fas fa-democrat'
         if (person.party === 'ID') partyIcon.className = 'fas fa-users'
-
-
+    
     figImg.src = person.imgURL;
     figCaption.textContent = person.name;
 
@@ -74,17 +67,23 @@ function getSimplifiedPeople(peopleList) {
 
 const repubButton = document.querySelector("#republicans");
 repubButton.addEventListener("click", () => {
-  populateCongressDiv(filterCongressPeople(senators, 'R'))
+  if (congressPeople === 'senators') populateCongressDiv(filterCongressPeople(senators, 'R'));
+  if (congressPeople === 'representatives') populateCongressDiv(filterCongressPeople(representatives, 'R'))
 });
 
 const demoButton = document.querySelector('#democrats')
 demoButton.addEventListener('click', () => {
-  populateCongressDiv(filterCongressPeople(senators, 'D'))
+  if (congressPeople === 'senators') populateCongressDiv(filterCongressPeople(senators, 'D'));
+  if (congressPeople === 'representatives') populateCongressDiv(filterCongressPeople(representatives, 'D'))
 })
 
 const IndependentButton = document.querySelector('#independents')
 IndependentButton.addEventListener('click', () => {
-  populateCongressDiv(filterCongressPeople(senators, 'ID'))
+  if (congressPeople === 'senators') populateCongressDiv(filterCongressPeople(senators, 'ID'));
+  if (congressPeople === 'representatives') {
+    populateCongressDiv(filterCongressPeople(representatives, 'ID'))
+
+  } 
 })
 
 
@@ -102,9 +101,21 @@ const filterCongressPeople = (chamber, politicalParty) => {
 }
 
 const missedVotesMember = (chamber) => {
-  const highestMissedVotesPerson = getSimplifiedPeople(chamber).reduce((acc, member) => acc.missed_votes_pct > member.missed_votes_pct ? acc : member)
-  return getSimplifiedPeople(chamber).filter((person) => person.missed_votes_pct === highestMissedVotesPerson.missed_votes_pct)
+    const highestMissedVotesPerson = getSimplifiedPeople(chamber).reduce((acc, member) => acc.missed_votes_pct > member.missed_votes_pct ? acc : member)
+    return getSimplifiedPeople(chamber).filter((person) => person.missed_votes_pct === highestMissedVotesPerson.missed_votes_pct)
+    .map((person) => person.name).join(', ')
 }
+
+missedVotes.addEventListener('click', () => {
+  // if (congressPeople == 'senators') populateCongressDiv(missedVotesMember(senators))
+  // if (congressPeople === 'representatives') populateCongressDiv(missedVotesMember(representatives))
+  console.log(missedVotesMember(senators, representatives))
+  alert(missedVotesMember(senators))
+}
+)
+
+// populateCongressDiv(getSimplifiedPeople(senators))
+
 
   // calling functions
 
