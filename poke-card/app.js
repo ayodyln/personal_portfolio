@@ -20,7 +20,7 @@ const genFourButton = document.querySelector("#genfour-button");
 const genFiveButton = document.querySelector("#genfive-button");
 const genSixButton = document.querySelector("#gensix-button");
 const genSevenButton = document.querySelector("#genseven-button");
-const genEightButton = document.querySelector("#geneight-button");
+const myPokemon = document.querySelector("#mypokemon");
 
 
 loadButton.addEventListener("click", () => {
@@ -44,10 +44,10 @@ genSixButton.addEventListener("click", () => {
 genSevenButton.addEventListener("click", () => {
   genPage(88, 721);
 });
-// genEightButton.addEventListener('click', () => {
-//   genEightPage()
-// })
-
+myPokemon.addEventListener('click', () => {
+  removeChildren(pokeGrid)
+  populatePokeCard(newPokemon)
+})
 //buttons end
 
 //Calling for api, awaiting resonse and return it as data, then functions for specific data ranges.
@@ -100,8 +100,8 @@ class Pokemon {
     this.abilities = abilities
     this.moves = moves
     this.sprites = {
-      front_default: 'images/pokeball-front.png',
-      front_shiny: 'images/pokeball-shiny.png'
+      front_default: 'img/pokeball-logo.png',
+      front_shiny: 'img/pokeball-logo.png'
     }
     this.forms = []
     this.types = [
@@ -128,6 +128,7 @@ newButton.addEventListener('click', () => {
     )
   populatePokeCard(newPokemon)
 })
+
 
 //populating page section
 
