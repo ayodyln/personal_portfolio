@@ -10,7 +10,6 @@ const pokeGrid = document.querySelector(".pokeGrid");
 //   preLoad.classList.add('preload-finish')
 // })
 
-
 //Buttons
 
 const loadButton = document.querySelector("#genone-button");
@@ -21,7 +20,6 @@ const genFiveButton = document.querySelector("#genfive-button");
 const genSixButton = document.querySelector("#gensix-button");
 const genSevenButton = document.querySelector("#genseven-button");
 const myPokemon = document.querySelector("#mypokemon");
-
 
 loadButton.addEventListener("click", () => {
   genPage(151, 0);
@@ -44,10 +42,7 @@ genSixButton.addEventListener("click", () => {
 genSevenButton.addEventListener("click", () => {
   genPage(88, 721);
 });
-myPokemon.addEventListener('click', () => {
-  removeChildren(pokeGrid)
-  populatePokeCard(newPokemon)
-})
+
 //buttons end
 
 //Calling for api, awaiting resonse and return it as data, then functions for specific data ranges.
@@ -60,75 +55,78 @@ async function getAPIData(url) {
   } catch (error) {
     // must have been an error
     // console.log(error);
-    window.alert("Error Fetching Data")
+    window.alert("Error Fetching Data");
   }
 }
 
 function genPage(limit, offset) {
   removeChildren(pokeGrid);
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`).then(
-    async (data) => {
-      for (const singlePokemon of data.results) {
-        await getAPIData(singlePokemon.url).then((pokeData) =>
-          populatePokeCard(pokeData)
-        );
-      }
+  getAPIData(
+    `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`
+  ).then(async (data) => {
+    for (const singlePokemon of data.results) {
+      await getAPIData(singlePokemon.url).then((pokeData) =>
+        populatePokeCard(pokeData)
+      );
     }
-  );
+  });
 }
 
 //calling api section end
 
 //search bar
 
-const fetchButton = document.querySelector('.fetchPokemonByID')
+const fetchButton = document.querySelector(".fetchPokemonByID");
 
-fetchButton.addEventListener('click', () => {
-  let pokeId = prompt("Pokemon ID or Name").toLowerCase()
-  getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`).then(
-    (data) => populatePokeCard(data)
-  ).catch(error => console.log(error)) 
+fetchButton.addEventListener("click", () => {
+  let pokeId = prompt("Pokemon ID or Name").toLowerCase();
+  getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+    .then((data) => populatePokeCard(data))
+    .catch((error) => console.log(error));
   // console.log(pokeId)
-})
+});
 
 class Pokemon {
   constructor(name, height, weight, abilities, moves) {
-    this.id = 899
-    this.name = name
-    this.height = height
-    this.width = weight
-    this.abilities = abilities
-    this.moves = moves
+    this.id = 899;
+    this.name = name;
+    this.height = height;
+    this.width = weight;
+    this.abilities = abilities;
+    this.moves = moves;
     this.sprites = {
-      front_default: 'img/pokeball-logo.png',
-      front_shiny: 'img/pokeball-logo.png'
-    }
-    this.forms = []
+      front_default: "img/pokeball-logo.png",
+      front_shiny: "img/pokeball-logo.png",
+    };
+    this.forms = [];
     this.types = [
       {
-      type: {
-        name: "normal",
-      }
-      }
-    ]
+        type: {
+          name: "normal",
+        },
+      },
+    ];
   }
 }
 
-const newButton = document.querySelector('.newPokemon')
-newButton.addEventListener('click', () => {
-  let pokeName = prompt("What is the name of your new Pokemon?")
-  let pokeHeight = prompt("Pokemon Height?")
-  let pokeWeight = prompt("Pokemon Weight?")
+const newButton = document.querySelector(".newPokemon");
+newButton.addEventListener("click", () => {
+  let pokeName = prompt("What is the name of your new Pokemon?");
+  let pokeHeight = prompt("Pokemon Height?");
+  let pokeWeight = prompt("Pokemon Weight?");
   let newPokemon = new Pokemon(
-    pokeName, 
-    pokeHeight, 
+    pokeName,
+    pokeHeight,
     pokeWeight,
-    ['eat', 'sleep'],
-    ['study', 'drink', 'game']
-    )
-  populatePokeCard(newPokemon)
-})
-
+    ["heal", "sleep"],
+    ["study", "drink", "game"]
+  );
+  populatePokeCard(newPokemon);
+});
+myPokemon.addEventListener("click", () => {
+  removeChildren(pokeGrid);
+  populatePokeCard(newPokemon);
+});
 
 //populating page section
 
@@ -162,9 +160,8 @@ function populateCardFront(pokemon) {
   let frontImage = document.createElement("img");
   frontImage.className = "front-img-pokemon";
   // frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
-  frontImage.src = getImageFileName(pokemon)
+  frontImage.src = getImageFileName(pokemon);
   // frontImage.src = altImg(pokemon)
-  
 
   let pokemonID = document.createElement("h2");
   pokemonID.className = ".pokeID";
@@ -173,7 +170,7 @@ function populateCardFront(pokemon) {
   pokeFront.appendChild(pokemonID);
   pokeFront.appendChild(frontImage);
   pokeFront.appendChild(frontLabel);
-
+  // pokeFront.classList.add(pokemon.types[0].type.name)
   return pokeFront;
 }
 
@@ -206,6 +203,20 @@ function populateCardBack(pokemon) {
     .map((type) => type.type.name)
     .join(", ")}`;
 
+  // let backLabelTypes = document.createElement("p");
+  // backLabelTypes.textContent = `Types: ${pokemon.types
+  //   .map((type) => {
+  //     // type.type.name
+  //     let typeOne = document.createElement('span')
+  //     typeOne.textContent = type.type.name
+  //     typeOne.style.setProperty('color', '#FFF')
+  
+  //     pokeBack.appendChild(typeOne)
+  //   })
+  //   .join(", ")}`;
+  
+  // backLabelTypes.classList.add(pokemon.types[0].type.name);
+
   let backlabelWeight = document.createElement("p");
   backlabelWeight.textContent = `Weight: ${pokemon.weight}`;
 
@@ -225,19 +236,34 @@ function populateCardBack(pokemon) {
 }
 
 function getImageFileName(pokemon) {
-  let pokeId
-    if (pokemon.id < 10) pokeId = `00${pokemon.id}`
-    if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`
-    if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id
-    if (pokemon.id === 899) {
-      return `img/pokeball-logo.png`
-    }
+  let pokeId;
+  if (pokemon.id < 10) pokeId = `00${pokemon.id}`;
+  if (pokemon.id > 9 && pokemon.id < 100) pokeId = `0${pokemon.id}`;
+  if (pokemon.id > 99 && pokemon.id < 810) pokeId = pokemon.id;
+  if (pokemon.id === 899) {
+    return `img/pokeball-logo.png`;
+  }
 
-    return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`
+  return `https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/${pokeId}.png`;
 }
 
 (function () {
-  console.log('bir')
+  console.log("Example of calling a function");
 })();
+
+// function getPokeTypeColor(pokeType) {
+//   let color;
+//   switch (pokeType) {
+//     case "grass":
+//       color = "#fff";
+//       break;
+//       case "grass":
+//       color = "#fff";
+//       break;
+
+//     default:
+//       break;
+//   }
+// }
 
 //end of population section
