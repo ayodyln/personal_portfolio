@@ -164,8 +164,9 @@ footer {
   outline: none;
 }
 
+
 .btn:hover {
-  box-shadow: inset 225px 0 0 0 #b42033;
+  box-shadow: inset 250px 0 0 0 #b42033;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -195,9 +196,6 @@ footer {
   width: 250px;
 }
 
-.grass {
-  background-color: green;
-}
 
 
 

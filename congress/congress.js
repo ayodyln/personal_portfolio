@@ -35,6 +35,7 @@ function populateCongressDiv(simplifiedList) {
     let figCaption = document.createElement("figcaption");
     figCaption.className = "figCap";
     
+    
     let partyIcon = document.createElement('i')
         if (person.party === 'R') partyIcon.className = 'fas fa-republican'
         if (person.party === 'D') partyIcon.className = 'fas fa-democrat'
@@ -107,17 +108,15 @@ const missedVotesMember = (chamber) => {
 }
 
 missedVotes.addEventListener('click', () => {
-  // if (congressPeople == 'senators') populateCongressDiv(missedVotesMember(senators))
-  // if (congressPeople === 'representatives') populateCongressDiv(missedVotesMember(representatives))
   console.log(missedVotesMember(senators, representatives))
-  alert(missedVotesMember(senators))
+  alert(missedVotesMember(senators, representatives))
 }
 )
 
-// populateCongressDiv(getSimplifiedPeople(senators))
+populateCongressDiv(getSimplifiedPeople(senators))
 
 
-  // calling functions
+// calling functions
 
 
 
