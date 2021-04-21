@@ -203,20 +203,6 @@ function populateCardBack(pokemon) {
     .map((type) => type.type.name)
     .join(", ")}`;
 
-  // let backLabelTypes = document.createElement("p");
-  // backLabelTypes.textContent = `Types: ${pokemon.types
-  //   .map((type) => {
-  //     // type.type.name
-  //     let typeOne = document.createElement('span')
-  //     typeOne.textContent = type.type.name
-  //     typeOne.style.setProperty('color', '#FFF')
-  
-  //     pokeBack.appendChild(typeOne)
-  //   })
-  //   .join(", ")}`;
-  
-  // backLabelTypes.classList.add(pokemon.types[0].type.name);
-
   let backlabelWeight = document.createElement("p");
   backlabelWeight.textContent = `Weight: ${pokemon.weight}`;
 
