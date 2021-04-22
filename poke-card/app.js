@@ -42,7 +42,7 @@ genSixButton.addEventListener("click", () => {
 genSevenButton.addEventListener("click", () => {
   genPage(88, 721);
 });
-genEightButton.addEventListener('click', () => {
+genEightButton.addEventListener("click", () => {
   genPage(89, 809);
 });
 
@@ -106,7 +106,7 @@ fetchButton.addEventListener("click", () => {
 //   }
 // }
 class Pokemon {
-  constructor(name, moves, forms, types, weight ) {
+  constructor(name, moves, forms, types, weight) {
     this.id = 899;
     this.name = name;
     this.moves = moves;
@@ -117,8 +117,8 @@ class Pokemon {
       front_shiny: "",
     };
     this.png = {
-      frontImage: "img/pokeball-logo.png"
-    }
+      frontImage: "img/pokeball-logo.png",
+    };
     this.weight = weight;
   }
 }
@@ -149,26 +149,24 @@ newButton.addEventListener("click", () => {
   let pokeName = prompt("What is the name of your new Pokemon?");
   let pokeMoves = prompt("How many pokemon moves?");
   let pokeWeight = prompt("Pokemon Weight?");
-  let pokeForm = prompt("How many forms does your pokemon have?")
+  let pokeForm = prompt("How many forms does your pokemon have?");
   let newPokemon = new Pokemon(
     // pokeNewId,
     pokeName,
     pokeMoves,
     pokeForm,
-    [{
-      type: {
-        name: 'fire'
-      }
-    }],
+    [
+      {
+        type: {
+          name: "fire",
+        },
+      },
+    ],
     pokeWeight
-    
   );
   populatePokeCard(newPokemon);
 });
-myPokemon.addEventListener("click", () => {
-  removeChildren(pokeGrid);
-  populatePokeCard(newPokemon);
-});
+
 
 //populating page section
 
@@ -201,16 +199,12 @@ function populateCardFront(pokemon) {
 
   let frontImage = document.createElement("img");
   frontImage.className = "front-img-pokemon";
-  // frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
-  frontImage.src = getImageFileName(pokemon);
-  frontImage.addEventListener('error', () => {
-    frontImage.src = `img/${pokemon.id}.png`
-    
-  })
-  frontImage.addEventListener('error', () => {
-    frontImage.src = `https://www.serebii.net/swordshield/pokemon/small/${pokemon.id}.png`
-  })
-  // frontImage.src = altImg(pokemon)
+
+  if (pokemon.id === 622 || pokemon.id === 740) {
+    frontImage.src = `img/${pokemon.id}.png`;
+  } else if (pokemon.id > 809) {
+    frontImage.src = `https://www.serebii.net/swordshield/pokemon/small/${pokemon.id}.png`;
+  } else frontImage.src = getImageFileName(pokemon);
 
   let pokemonID = document.createElement("h2");
   pokemonID.className = ".pokeID";
