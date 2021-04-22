@@ -19,7 +19,7 @@ const genFourButton = document.querySelector("#genfour-button");
 const genFiveButton = document.querySelector("#genfive-button");
 const genSixButton = document.querySelector("#gensix-button");
 const genSevenButton = document.querySelector("#genseven-button");
-const myPokemon = document.querySelector("#mypokemon");
+const genEightButton = document.querySelector("#Geneight-button");
 
 loadButton.addEventListener("click", () => {
   genPage(151, 0);
@@ -41,6 +41,9 @@ genSixButton.addEventListener("click", () => {
 });
 genSevenButton.addEventListener("click", () => {
   genPage(88, 721);
+});
+genEightButton.addEventListener('click', () => {
+  genPage(89, 809);
 });
 
 //buttons end
@@ -86,40 +89,79 @@ fetchButton.addEventListener("click", () => {
   // console.log(pokeId)
 });
 
+// class Pokemon {
+//   constructor(name, height, weight, abilities, moves, types) {
+//     this.id = 899;
+//     this.name = name;
+//     this.height = height;
+//     this.width = weight;
+//     this.abilities = abilities;
+//     this.moves = moves;
+//     this.sprites = {
+//       front_default: "img/pokeball-logo.png",
+//       front_shiny: "",
+//     };
+//     this.forms = [];
+//     this.types = types
+//   }
+// }
 class Pokemon {
-  constructor(name, height, weight, abilities, moves) {
+  constructor(name, moves, forms, types, weight ) {
     this.id = 899;
     this.name = name;
-    this.height = height;
-    this.width = weight;
-    this.abilities = abilities;
     this.moves = moves;
+    this.forms = forms;
+    this.types = types;
     this.sprites = {
       front_default: "img/pokeball-logo.png",
-      front_shiny: "img/pokeball-logo.png",
+      front_shiny: "",
     };
-    this.forms = [];
-    this.types = [
-      {
-        type: {
-          name: "normal",
-        },
-      },
-    ];
+    this.png = {
+      frontImage: "img/pokeball-logo.png"
+    }
+    this.weight = weight;
   }
 }
 
+// const newButton = document.querySelector(".newPokemon");
+// newButton.addEventListener("click", () => {
+//   let pokeName = prompt("What is the name of your new Pokemon?");
+//   let pokeHeight = prompt("Pokemon Height?");
+//   let pokeWeight = prompt("Pokemon Weight?");
+//   let pokeForm = prompt("How many forms does your pokemon have?")
+//   let newPokemon = new Pokemon(
+//     pokeName,
+//     pokeHeight,
+//     pokeWeight,
+//     ["heal", "sleep"],
+//     ["study", "drink", "game"],
+//     [{
+//       type: {
+//         name: 'fire'
+//       }
+//     }]
+//   );
+//   populatePokeCard(newPokemon);
+// });
 const newButton = document.querySelector(".newPokemon");
 newButton.addEventListener("click", () => {
+  // let pokeNewId = prompt("Whats the id of your new pokemone? Make sure its above 898.")
   let pokeName = prompt("What is the name of your new Pokemon?");
-  let pokeHeight = prompt("Pokemon Height?");
+  let pokeMoves = prompt("How many pokemon moves?");
   let pokeWeight = prompt("Pokemon Weight?");
+  let pokeForm = prompt("How many forms does your pokemon have?")
   let newPokemon = new Pokemon(
+    // pokeNewId,
     pokeName,
-    pokeHeight,
-    pokeWeight,
-    ["heal", "sleep"],
-    ["study", "drink", "game"]
+    pokeMoves,
+    pokeForm,
+    [{
+      type: {
+        name: 'fire'
+      }
+    }],
+    pokeWeight
+    
   );
   populatePokeCard(newPokemon);
 });
@@ -161,6 +203,13 @@ function populateCardFront(pokemon) {
   frontImage.className = "front-img-pokemon";
   // frontImage.src = `poke-img/${getImageFileName(pokemon)}.png`;
   frontImage.src = getImageFileName(pokemon);
+  frontImage.addEventListener('error', () => {
+    frontImage.src = `img/${pokemon.id}.png`
+    
+  })
+  frontImage.addEventListener('error', () => {
+    frontImage.src = `https://www.serebii.net/swordshield/pokemon/small/${pokemon.id}.png`
+  })
   // frontImage.src = altImg(pokemon)
 
   let pokemonID = document.createElement("h2");
