@@ -26,6 +26,7 @@ body {
   font-family: 'Poppins', sans-serif;
   color: white;
   overflow-x: hidden;
+  
 }
 h1 {
   display: flex;
@@ -50,7 +51,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 1;
 }
 .navlist {
   display: flex;
@@ -177,8 +178,10 @@ footer {
     and (device-width: 390px) 
     and (device-height: 844px) 
     and (-webkit-device-pixel-ratio: 3) { 
+      
       #navbar {
         height: 50px;
+        
       }
       a:hover {
         height: 15px;
