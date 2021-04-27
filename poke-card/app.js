@@ -89,7 +89,22 @@ fetchButton.addEventListener("click", () => {
   // console.log(pokeId)
 });
 
-
+// class Pokemon {
+//   constructor(name, height, weight, abilities, moves, types) {
+//     this.id = 899;
+//     this.name = name;
+//     this.height = height;
+//     this.width = weight;
+//     this.abilities = abilities;
+//     this.moves = moves;
+//     this.sprites = {
+//       front_default: "img/pokeball-logo.png",
+//       front_shiny: "",
+//     };
+//     this.forms = [];
+//     this.types = types
+//   }
+// }
 class Pokemon {
   constructor(name, moves, forms, types, weight) {
     this.id = 899;
@@ -101,11 +116,33 @@ class Pokemon {
       front_default: "img/pokeball-logo100px.png",
       front_shiny: "img/pokeball-logo100px.png",
     };
+    this.frontImage = {
+      frontImage: "img/pokeball-logo100px.png",
+    };
     this.weight = weight;
   }
 }
 
-
+// const newButton = document.querySelector(".newPokemon");
+// newButton.addEventListener("click", () => {
+//   let pokeName = prompt("What is the name of your new Pokemon?");
+//   let pokeHeight = prompt("Pokemon Height?");
+//   let pokeWeight = prompt("Pokemon Weight?");
+//   let pokeForm = prompt("How many forms does your pokemon have?")
+//   let newPokemon = new Pokemon(
+//     pokeName,
+//     pokeHeight,
+//     pokeWeight,
+//     ["heal", "sleep"],
+//     ["study", "drink", "game"],
+//     [{
+//       type: {
+//         name: 'fire'
+//       }
+//     }]
+//   );
+//   populatePokeCard(newPokemon);
+// });
 const newButton = document.querySelector(".newPokemon");
 newButton.addEventListener("click", () => {
   // let pokeNewId = prompt("Whats the id of your new pokemone? Make sure its above 898.")
