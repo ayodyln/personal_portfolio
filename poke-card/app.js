@@ -89,22 +89,7 @@ fetchButton.addEventListener("click", () => {
   // console.log(pokeId)
 });
 
-// class Pokemon {
-//   constructor(name, height, weight, abilities, moves, types) {
-//     this.id = 899;
-//     this.name = name;
-//     this.height = height;
-//     this.width = weight;
-//     this.abilities = abilities;
-//     this.moves = moves;
-//     this.sprites = {
-//       front_default: "img/pokeball-logo.png",
-//       front_shiny: "",
-//     };
-//     this.forms = [];
-//     this.types = types
-//   }
-// }
+
 class Pokemon {
   constructor(name, moves, forms, types, weight) {
     this.id = 899;
@@ -113,36 +98,14 @@ class Pokemon {
     this.forms = forms;
     this.types = types;
     this.sprites = {
-      front_default: "img/pokeball-logo.png",
-      front_shiny: "",
-    };
-    this.png = {
-      frontImage: "img/pokeball-logo.png",
+      front_default: "img/pokeball-logo100px.png",
+      front_shiny: "img/pokeball-logo100px.png",
     };
     this.weight = weight;
   }
 }
 
-// const newButton = document.querySelector(".newPokemon");
-// newButton.addEventListener("click", () => {
-//   let pokeName = prompt("What is the name of your new Pokemon?");
-//   let pokeHeight = prompt("Pokemon Height?");
-//   let pokeWeight = prompt("Pokemon Weight?");
-//   let pokeForm = prompt("How many forms does your pokemon have?")
-//   let newPokemon = new Pokemon(
-//     pokeName,
-//     pokeHeight,
-//     pokeWeight,
-//     ["heal", "sleep"],
-//     ["study", "drink", "game"],
-//     [{
-//       type: {
-//         name: 'fire'
-//       }
-//     }]
-//   );
-//   populatePokeCard(newPokemon);
-// });
+
 const newButton = document.querySelector(".newPokemon");
 newButton.addEventListener("click", () => {
   // let pokeNewId = prompt("Whats the id of your new pokemone? Make sure its above 898.")
@@ -151,7 +114,6 @@ newButton.addEventListener("click", () => {
   let pokeWeight = prompt("Pokemon Weight?");
   let pokeForm = prompt("How many forms does your pokemon have?");
   let newPokemon = new Pokemon(
-    // pokeNewId,
     pokeName,
     pokeMoves,
     pokeForm,
@@ -202,8 +164,10 @@ function populateCardFront(pokemon) {
 
   if (pokemon.id === 622 || pokemon.id === 740) {
     frontImage.src = `img/${pokemon.id}.png`;
-  } else if (pokemon.id > 809) {
+  } else if (pokemon.id > 809 || pokemon.id < 899) {
     frontImage.src = `https://www.serebii.net/swordshield/pokemon/small/${pokemon.id}.png`;
+  } else if (pokemon.id === 899) {
+    frontImage.src = `img/pokeball-logo100px.png`
   } else frontImage.src = getImageFileName(pokemon);
 
   let pokemonID = document.createElement("h2");
@@ -213,7 +177,7 @@ function populateCardFront(pokemon) {
   pokeFront.appendChild(pokemonID);
   pokeFront.appendChild(frontImage);
   pokeFront.appendChild(frontLabel);
-  // pokeFront.classList.add(pokemon.types[0].type.name)
+  
   return pokeFront;
 }
 
@@ -280,19 +244,5 @@ function getImageFileName(pokemon) {
   console.log("Example of calling a function");
 })();
 
-// function getPokeTypeColor(pokeType) {
-//   let color;
-//   switch (pokeType) {
-//     case "grass":
-//       color = "#fff";
-//       break;
-//       case "grass":
-//       color = "#fff";
-//       break;
-
-//     default:
-//       break;
-//   }
-// }
 
 //end of population section
