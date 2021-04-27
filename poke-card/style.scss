@@ -136,15 +136,17 @@ main {
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   border: 1px solid var(--fav-red);
   background-color: var(--fav-black);
   border-radius: 10px;
   box-shadow: 0 0 10px var(--fav-red);
+  transition: transform 0.5s;
 }
 
 .card.is-flipped {
   transform: rotateY(180deg);
+  transition: transform 0.5s;
 }
 
 .card__face {
@@ -157,6 +159,7 @@ main {
 .card__face--back {
   color: var(--fav-lightgrey);
   transform: rotateY(180deg);
+  
   position: absolute;
   width: 200px;
   height: 260px;

@@ -201,10 +201,10 @@ function populateCardFront(pokemon) {
 
   if (pokemon.id === 622 || pokemon.id === 740) {
     frontImage.src = `img/${pokemon.id}.png`;
-  } else if (pokemon.id > 809 ) {
-    frontImage.src = `https://www.serebii.net/swordshield/pokemon/small/${pokemon.id}.png`;
   } else if (pokemon.id === 899) {
     frontImage.src = 'img/pokeball-logo100px.png';
+  } else if (pokemon.id > 809 ) {
+    frontImage.src = `https://www.serebii.net/swordshield/pokemon/small/${pokemon.id}.png`;
   } else frontImage.src = getImageFileName(pokemon);
 
   let pokemonID = document.createElement("h2");
