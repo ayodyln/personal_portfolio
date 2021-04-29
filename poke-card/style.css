@@ -289,7 +289,7 @@ p {
     and (device-width: 1920px) 
     and (device-height: 1080px) {
       .pokeGrid {
-        margin-top: 25px;
+        margin: 25px;
       }
 
 
