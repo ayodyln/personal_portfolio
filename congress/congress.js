@@ -107,10 +107,9 @@ const missedVotesMember = (chamber) => {
 }
 
 missedVotes.addEventListener('click', () => {
-  // console.log(missedVotesMember(senators))
-  // alert(missedVotesMember(senators))
-
-  populateCongressDiv(missedVotesMember(senators))
+  if (congressPeople === 'senators') {populateCongressDiv(missedVotesMember(senators))}
+  if (congressPeople === 'representatives') {populateCongressDiv(missedVotesMember(representatives))}
+  
 }
 )
 
