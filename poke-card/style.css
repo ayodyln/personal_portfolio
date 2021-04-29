@@ -291,5 +291,7 @@ p {
       main {
         margin-top: 15vh;
       }
-
+      .button-totop {
+        top: 80%;
+      }
     }
