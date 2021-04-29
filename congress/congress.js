@@ -8,7 +8,6 @@ const congressGrid = document.querySelector(".congressGrid");
 const seniorityButton = document.querySelector('#Seniority')
 const missedVotes = document.querySelector('#missedvotes')
 
-
 const senatorsButton = document.querySelector('#senators-button')
 let congressPeople = 'senators'
 
@@ -104,12 +103,14 @@ const filterCongressPeople = (chamber, politicalParty) => {
 const missedVotesMember = (chamber) => {
     const highestMissedVotesPerson = getSimplifiedPeople(chamber).reduce((acc, member) => acc.missed_votes_pct > member.missed_votes_pct ? acc : member)
     return getSimplifiedPeople(chamber).filter((person) => person.missed_votes_pct === highestMissedVotesPerson.missed_votes_pct)
-    .map((person) => person.name).join(', ')
+    // .map((person) => person.name).join(', ')
 }
 
 missedVotes.addEventListener('click', () => {
-  console.log(missedVotesMember(senators, representatives))
-  alert(missedVotesMember(senators, representatives))
+  // console.log(missedVotesMember(senators))
+  // alert(missedVotesMember(senators))
+
+  populateCongressDiv(missedVotesMember(senators))
 }
 )
 
