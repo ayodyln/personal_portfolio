@@ -82,6 +82,7 @@ function genPage(limit, offset) {
 const fetchButton = document.querySelector(".fetchPokemonByID");
 
 fetchButton.addEventListener("click", () => {
+  removeChildren(pokeGrid)
   let pokeId = prompt("Pokemon ID or Name").toLowerCase();
   getAPIData(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
     .then((data) => populatePokeCard(data))
