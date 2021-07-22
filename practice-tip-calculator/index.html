@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/42a4a84ffd.js" crossorigin="anonymous" defer></script>
+    <script src="app.js" defer></script>
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-container">
+            <input type="text" id="user-input" name="bill-amount" placeholder="$ Bill Amount">
+            <div class="tip-percent-container">
+                <button class="btn--10 tip">10%</button>
+                <button class="btn--15 tip">15%</button>
+                <button class="btn--20 tip">20%</button>
+                <button class="btn--25 tip">25%</button>
+            </div>
+            <input type="text" id="tip-input" class="tip-custom" name="tip-amount" placeholder="Custom Tip %">
+            <button class="submit-btn">Calculate</button>
+        </div>
+        <div class="line"></div>
+        <div class="right-container">
+            <div class="output">
+                <p class="tip-text output-text">Tip: $<span class="tip-amount"> 100</span></p>
+                <p class="total output-text">Total: $<span class="total-amount"> 100</span></p>
+            </div>
+            <button class="clear-calc">Clear</button>
+        </div>
+    </div>
+</body>
+
+</html>

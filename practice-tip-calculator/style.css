@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+
+/* :root {
+
+} */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background: #c31432; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right bottom, #240b36, #c31432);
+  background: linear-gradient(to right bottom, #240b36, #c31432);
+
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right bottom, #434343, #000000);
+  background: linear-gradient(to right bottom, #434343, #000000);
+
+  width: 45vw;
+  height: 60vh;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.35);
+}
+
+.left-container {
+  background-color: transparent;
+  height: 55vh;
+  width: 25vw;
+  /* border: blue solid 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#user-input {
+  width: 20vw;
+  margin-left: 2.5vw;
+
+  height: 5rem;
+  background: #434343;
+  border-style: none;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+
+  font-size: 32px;
+  color: white;
+  padding: 10px;
+}
+
+.tip-percent-container {
+  width: 20vw;
+  margin-left: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tip {
+  margin: 10px;
+  width: 15rem;
+  height: 5rem;
+  border-radius: 10px;
+  font-size: 32px;
+  background: #434343;
+  outline: none;
+  border-style: none;
+  color: white;
+}
+.tip:hover {
+  color: white;
+  background: linear-gradient(to right bottom, #240b36, #c31432);
+  outline: none;
+  border-style: none;
+}
+
+.tip-custom {
+  width: 35.5rem;
+  height: 5rem;
+  margin-left: 2.5vw;
+  border-radius: 10px;
+  font-size: 32px;
+  background: #434343;
+  border-style: none;
+  color: white;
+  padding: 10px;
+  outline: none;
+}
+
+.submit-btn {
+  width: 20vw;
+  margin-left: 2.5vw;
+  height: 5rem;
+  font-size: 32px;
+  border-radius: 10px;
+  background: #434343;
+  outline: none;
+  border-style: none;
+  color: white;
+}
+
+.active {
+  color: white;
+  background: linear-gradient(to right bottom, #240b36, #c31432);
+  outline: none;
+  border-style: none;
+}
+
+.submit-btn:hover {
+  color: white;
+  background: linear-gradient(to right bottom, #240b36, #c31432);
+  outline: none;
+  border-style: none;
+}
+
+.right-container {
+  background: linear-gradient(to right top, #240b36, #c31432);
+  height: 55vh;
+  width: 15vw;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 50px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.5);
+}
+
+.output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.output-text {
+  margin: 4rem;
+  font-size: 32px;
+  color: whitesmoke;
+}
+
+.clear-calc {
+  width: 75%;
+  height: 5rem;
+  margin: 1rem;
+  font-size: 32px;
+  background: #434343;
+  border-style: none;
+  color: white;
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+}
+.clear-calc:hover {
+  color: white;
+  background: linear-gradient(to left bottom, #434343, #000000);
+  outline: none;
+  border-style: none;
+}
