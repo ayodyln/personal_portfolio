@@ -1,5 +1,4 @@
-# This is my awesome Personal Portfolio!
-This will be updated till done and it will look awesome in the end. With a nice clean and simple look that is straight.
+# Personal Portfolio 1.0
 
-**Stick around!**
+This is my first website project of some basic HTML, CSS and some Javascript.
 
